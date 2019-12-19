@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.hnuhpj.com/"/>
-  <updated>2019-12-19T16:00:58.576Z</updated>
+  <updated>2019-12-19T17:29:16.608Z</updated>
   <id>https://www.hnuhpj.com/</id>
   
   <author>
@@ -17,13 +17,50 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>post</title>
-    <link href="https://www.hnuhpj.com/2019/12/20/post/"/>
-    <id>https://www.hnuhpj.com/2019/12/20/post/</id>
-    <published>2019-12-19T16:00:58.000Z</published>
-    <updated>2019-12-19T16:00:58.576Z</updated>
+    <title>Hexo常用命令和Hexo下的Markdown语法(GFM)</title>
+    <link href="https://www.hnuhpj.com/2019/12/20/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8CHexo%E4%B8%8B%E7%9A%84Markdown%E8%AF%AD%E6%B3%95-GFM/"/>
+    <id>https://www.hnuhpj.com/2019/12/20/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8CHexo%E4%B8%8B%E7%9A%84Markdown%E8%AF%AD%E6%B3%95-GFM/</id>
+    <published>2019-12-19T16:23:37.000Z</published>
+    <updated>2019-12-19T17:29:16.608Z</updated>
+    
+    <content type="html"><![CDATA[<h3><span id="mu-lu">目录</span><a href="#mu-lu" class="header-anchor">▷</a></h3><div class="toc"><!-- toc --><ul><li><a href="#hexo-chang-yong-ming-ling">Hexo常用命令</a><ul><li><a href="#1-xin-jian">1. 新建</a></li><li><a href="#2-sheng-cheng-jing-tai-ye-mian">2. 生成静态页面</a></li><li><a href="#3-kai-qi-ben-di-fu-wu-qi">3. 开启本地服务器</a></li><li><a href="#4-bu-shu">4. 部署</a></li><li><a href="#5-qing-chu-public">5. 清除public</a></li></ul></li><li><a href="#hexo-xia-de-markdown-yu-fa">Hexo下的Markdown语法</a><ul><li><a href="#fen-duan">分段</a></li><li><a href="#huan-xing">换行</a></li><li><a href="#biao-ti">标题</a></li><li><a href="#yin-yong">引用</a></li><li><a href="#lie-biao">列表</a></li><li><a href="#lian-jie">链接</a></li><li><a href="#tu-pian">图片</a></li><li><a href="#qiang-diao-jia-cu">强调（加粗）</a></li><li><a href="#dai-ma">代码</a></li><li><a href="#shui-ping-xian">水平线</a></li></ul></li></ul><!-- tocstop --></div><h1><span id="hexo-chang-yong-ming-ling">Hexo常用命令</span><a href="#hexo-chang-yong-ming-ling" class="header-anchor">▷</a></h1><p>以下都是我常用的命令，如需要更详细的文档，请移步到<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo官方文档</a></p><h2><span id="1-xin-jian">1. 新建</span><a href="#1-xin-jian" class="header-anchor">▷</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;new post&quot;</span><br></pre></td></tr></table></figure><p>新建的文件在 “hexo/source/_post/“文件夹下</p><a id="more"></a><h2><span id="2-sheng-cheng-jing-tai-ye-mian">2. 生成静态页面</span><a href="#2-sheng-cheng-jing-tai-ye-mian" class="header-anchor">▷</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure><p>其实就是编译，编译后，会出现一个 public 文件夹，将所有的md文件编译成html文件</p><h2><span id="3-kai-qi-ben-di-fu-wu-qi">3. 开启本地服务器</span><a href="#3-kai-qi-ben-di-fu-wu-qi" class="header-anchor">▷</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure><p>一般访问<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>查看</p><h2><span id="4-bu-shu">4. 部署</span><a href="#4-bu-shu" class="header-anchor">▷</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure><h2><span id="5-qing-chu-public">5. 清除public</span><a href="#5-qing-chu-public" class="header-anchor">▷</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure><p>当 source 文件夹中的部分资源更改过之后，特别是对文件进行了删除或者路径的改变之后，需要执行这个命令，然后重新编译。</p><h1><span id="hexo-xia-de-markdown-yu-fa">Hexo下的Markdown语法</span><a href="#hexo-xia-de-markdown-yu-fa" class="header-anchor">▷</a></h1><p><a href="https://markdown-zh.readthedocs.io/en/latest/" target="_blank" rel="noopener">Markdown</a> 是一种轻量级标记语言，创始人为约翰·格鲁伯和亚伦·斯沃茨。它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML文档”。 ——维基百科</p><h2><span id="fen-duan">分段</span><a href="#fen-duan" class="header-anchor">▷</a></h2><p>行尾输入两个或以上的空格，然后回车。或者行尾加上<br>。</p><p>像这样</p><h2><span id="huan-xing">换行</span><a href="#huan-xing" class="header-anchor">▷</a></h2><p>这是第一行<br>这是第二行</p><h2><span id="biao-ti">标题</span><a href="#biao-ti" class="header-anchor">▷</a></h2><p># ~ ###### 井号的个数表示几级标题，即Markdown可以表示一级标题到六级标题</p><h2><span id="yin-yong">引用</span><a href="#yin-yong" class="header-anchor">▷</a></h2><p>用’&gt;’表示，你可以选择只在开头加一个。也可以在每行前面都加一个，效果是一样的,效果：</p><blockquote><p>这是引用</p><blockquote><p>引用可以嵌套</p></blockquote></blockquote><h2><span id="lie-biao">列表</span><a href="#lie-biao" class="header-anchor">▷</a></h2><p>* ， + ， - ， 1. ，选其中之一，注意后面有个空格，比如</p><ul><li>哈</li></ul><ul><li>哈</li></ul><ul><li>哈</li></ul><ol><li>哈<h2><span id="lian-jie">链接</span><a href="#lian-jie" class="header-anchor">▷</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[文字](链接地址)</span><br></pre></td></tr></table></figure>比如：<a href="www.hnuhpj.com">HNUHPJ</a><h2><span id="tu-pian">图片</span><a href="#tu-pian" class="header-anchor">▷</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](图片地址) &#x2F;&#x2F;图片地址可以是本地路劲，也可以是网络地址</span><br></pre></td></tr></table></figure>比如：<img src="/images/avatar.jpg" alt="我的头像"><h2><span id="qiang-diao-jia-cu">强调（加粗）</span><a href="#qiang-diao-jia-cu" class="header-anchor">▷</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**文字** ， __文字__ ， _文字_ ， *文字*</span><br></pre></td></tr></table></figure></li></ol><p><strong>文字</strong> ， <strong>文字</strong> ， <em>文字</em> ， <em>文字</em></p><h2><span id="dai-ma">代码</span><a href="#dai-ma" class="header-anchor">▷</a></h2><p>支持多种编程语言的语法高亮的显示，行号显示。<br><code>```Your code```</code></p><h2><span id="shui-ping-xian">水平线</span><a href="#shui-ping-xian" class="header-anchor">▷</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* * *</span><br><span class="line">***</span><br><span class="line">*****</span><br><span class="line">- - -</span><br><span class="line">---------------------------------------</span><br></pre></td></tr></table></figure><p>效果：</p><hr><hr><hr><hr><hr>]]></content>
     
     <summary type="html">
+    
+      &lt;h3 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h3&gt;&lt;div class=&quot;tocStart&quot;&gt;&lt;/div&gt;
+
+&lt;!-- toc --&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#hexo-chang-yong-ming-ling&quot;&gt;Hexo常用命令&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-xin-jian&quot;&gt;1. 新建&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-sheng-cheng-jing-tai-ye-mian&quot;&gt;2. 生成静态页面&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#3-kai-qi-ben-di-fu-wu-qi&quot;&gt;3. 开启本地服务器&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#4-bu-shu&quot;&gt;4. 部署&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#5-qing-chu-public&quot;&gt;5. 清除public&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#hexo-xia-de-markdown-yu-fa&quot;&gt;Hexo下的Markdown语法&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#fen-duan&quot;&gt;分段&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#huan-xing&quot;&gt;换行&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#biao-ti&quot;&gt;标题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#yin-yong&quot;&gt;引用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#lie-biao&quot;&gt;列表&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#lian-jie&quot;&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#tu-pian&quot;&gt;图片&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#qiang-diao-jia-cu&quot;&gt;强调（加粗）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#dai-ma&quot;&gt;代码&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#shui-ping-xian&quot;&gt;水平线&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- tocstop --&gt;
+
+&lt;div class=&quot;tocEnd&quot;&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;Hexo常用命令&quot;&gt;&lt;a href=&quot;#Hexo常用命令&quot; class=&quot;headerlink&quot; title=&quot;Hexo常用命令&quot;&gt;&lt;/a&gt;Hexo常用命令&lt;/h1&gt;&lt;p&gt;以下都是我常用的命令，如需要更详细的文档，请移步到&lt;a href=&quot;https://hexo.io/zh-cn/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1-新建&quot;&gt;&lt;a href=&quot;#1-新建&quot; class=&quot;headerlink&quot; title=&quot;1. 新建&quot;&gt;&lt;/a&gt;1. 新建&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;hexo new &amp;quot;new post&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;新建的文件在 “hexo/source/_post/“文件夹下&lt;/p&gt;
     
     </summary>
     
