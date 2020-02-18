@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.hnuhpj.com/"/>
-  <updated>2019-12-21T17:03:04.921Z</updated>
+  <updated>2020-02-18T07:19:47.339Z</updated>
   <id>https://www.hnuhpj.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>win10+deepin双系统安装</title>
+    <link href="https://www.hnuhpj.com/2020/02/18/win10-deepin%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"/>
+    <id>https://www.hnuhpj.com/2020/02/18/win10-deepin%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/</id>
+    <published>2020-02-18T07:16:01.000Z</published>
+    <updated>2020-02-18T07:19:47.339Z</updated>
+    
+    <content type="html"><![CDATA[<h1><span id="bei-jing">背景</span><a href="#bei-jing" class="header-anchor">▷</a></h1><p>一方面是想学习使用Linux，另一方面学校的课程需要用到Linux。<br>固态硬盘上安装了win10系统，准备在机械硬盘上安装deepinOS</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1&gt;&lt;span id=&quot;bei-jing&quot;&gt;背景&lt;/span&gt;&lt;a href=&quot;#bei-jing&quot; class=&quot;header-anchor&quot;&gt;▷&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;一方面是想学习使用Linux，另一方面学校的课程需要用到Linux。&lt;br&gt;固态硬盘上安装了win10系
+      
+    
+    </summary>
+    
+    
+    
+      <category term="学习" scheme="https://www.hnuhpj.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>给博主充电</title>
