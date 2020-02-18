@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://www.hnuhpj.com">
   <title>win10+deepin双系统安装 | TL;DR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="写在前面▷一方面是想学习使用Linux，另一方面学校的课程需要用到Linux，还有就是因疫情不能出门无聊想折腾。固态硬盘上安装了win10系统，准备在机械硬盘上安装deepinOS。听闻deepin简单、易用、美观，顺便支持一下国产。[我的设备] Dell G7 准备工作▷ 一个U盘（最小5G）或一张光盘以及光驱；提前转移或备份重要数据。 在深度科技官方网站下载镜像文件和官网提供的深度启动盘制作工">
+  <meta name="description" content="写在前面 准备工作 开始 MD5 校验 分区 用深度启动盘制作工具制作好启动盘。 安装过程 善后 写在后面        写在前面一方面是想学习使用Linux，另一方面学校的课程需要用到Linux，还有就是因疫情不能出门无聊想折腾。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="win10+deepin双系统安装">
 <meta property="og:url" content="https://www.hnuhpj.com/2020/02/18/win10-deepin%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/index.html">
 <meta property="og:site_name" content="TL;DR">
-<meta property="og:description" content="写在前面▷一方面是想学习使用Linux，另一方面学校的课程需要用到Linux，还有就是因疫情不能出门无聊想折腾。固态硬盘上安装了win10系统，准备在机械硬盘上安装deepinOS。听闻deepin简单、易用、美观，顺便支持一下国产。[我的设备] Dell G7 准备工作▷ 一个U盘（最小5G）或一张光盘以及光驱；提前转移或备份重要数据。 在深度科技官方网站下载镜像文件和官网提供的深度启动盘制作工">
+<meta property="og:description" content="写在前面 准备工作 开始 MD5 校验 分区 用深度启动盘制作工具制作好启动盘。 安装过程 善后 写在后面        写在前面一方面是想学习使用Linux，另一方面学校的课程需要用到Linux，还有就是因疫情不能出门无聊想折腾。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-18T07:16:01.000Z">
-<meta property="article:modified_time" content="2020-02-18T09:08:12.366Z">
+<meta property="article:modified_time" content="2020-02-18T09:27:49.103Z">
 <meta property="article:author" content="Shunder">
 <meta property="article:tag" content="学习">
 <meta name="twitter:card" content="summary">
@@ -271,7 +271,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2><span id="xie-zai-qian-mian">写在前面</span><a href="#xie-zai-qian-mian" class="header-anchor">▷</a></h2><p>一方面是想学习使用Linux，另一方面学校的课程需要用到Linux，还有就是因疫情不能出门无聊想折腾。<br>固态硬盘上安装了win10系统，准备在机械硬盘上安装deepinOS。<br>听闻deepin简单、易用、美观，顺便支持一下国产。<br>[我的设备] Dell G7</p>
+        <div class="toc">
+
+<!-- toc -->
+
+<ul>
+<li><a href="#xie-zai-qian-mian">写在前面</a></li>
+<li><a href="#zhun-bei-gong-zuo">准备工作</a></li>
+<li><a href="#kai-shi">开始</a><ul>
+<li><a href="#md5-xiao-yan">MD5 校验</a></li>
+<li><a href="#fen-qu">分区</a></li>
+<li><a href="#yong-shen-du-qi-dong-pan-zhi-zuo-gong-ju-zhi-zuo-hao-qi-dong-pan">用深度启动盘制作工具制作好启动盘。</a></li>
+<li><a href="#an-zhuang-guo-cheng">安装过程</a></li>
+<li><a href="#shan-hou">善后</a></li>
+<li><a href="#xie-zai-hou-mian">写在后面</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+</div>
+
+<h2><span id="xie-zai-qian-mian">写在前面</span><a href="#xie-zai-qian-mian" class="header-anchor">▷</a></h2><p>一方面是想学习使用Linux，另一方面学校的课程需要用到Linux，还有就是因疫情不能出门无聊想折腾。</p>
+<a id="more"></a>
+
+<p>固态硬盘上安装了win10系统，准备在机械硬盘上安装deepinOS。<br>听闻deepin简单、易用、美观，顺便支持一下国产。<br>[我的设备] Dell G7</p>
 <h2><span id="zhun-bei-gong-zuo">准备工作</span><a href="#zhun-bei-gong-zuo" class="header-anchor">▷</a></h2><ol>
 <li>一个U盘（最小5G）或一张光盘以及光驱；提前转移或备份重要数据。</li>
 <li>在<a href="https://www.deepin.org/" target="_blank" rel="noopener">深度科技官方网站</a>下载<a href="https://www.deepin.org/download/" target="_blank" rel="noopener">镜像文件</a>和官网提供的<a href="https://www.deepin.org/original/deepin-boot-maker/" target="_blank" rel="noopener">深度启动盘制作工具</a>。官网和论坛有时会出现504 Gateway Time-out，可以多刷新几次或者稍后再试。</li>
@@ -620,7 +644,7 @@
      	
         <!-- 不蒜子统计 -->
         <span>
-                本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                本站总访问量<span id="busuanzi_value_site_uv"></span>次
         </span>
         <span class="post-meta-divider">|</span>
         <span>

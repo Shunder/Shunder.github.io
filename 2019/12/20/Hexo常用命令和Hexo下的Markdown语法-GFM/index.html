@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="https://www.hnuhpj.com">
   <title>Hexo常用命令和Hexo下的Markdown语法(GFM) | TL;DR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="目录     Hexo常用命令 1. 新建 2. 生成静态页面 3. 开启本地服务器 4. 部署 5. 清除public   Hexo下的Markdown语法 分段 换行 标题 引用 列表 链接 图片 强调（加粗） 代码 水平线        Hexo常用命令以下都是我常用的命令，如需要更详细的文档，请移步到Hexo官方文档 1. 新建1hexo new &quot;new post&quot;">
+  <meta name="description" content="目录     Hexo常用命令 1. 新建 2. 生成静态页面 3. 开启本地服务器 4. 部署 5. 清除public   Hexo下的Markdown语法 分段 换行 标题 引用 列表 链接 插入图片 插入视频 强调（加粗） 代码 水平线 表格        Hexo常用命令以下都是我常用的命令，如需要更详细的文档，请移步到Hexo官方文档">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo常用命令和Hexo下的Markdown语法(GFM)">
 <meta property="og:url" content="https://www.hnuhpj.com/2019/12/20/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8CHexo%E4%B8%8B%E7%9A%84Markdown%E8%AF%AD%E6%B3%95-GFM/index.html">
 <meta property="og:site_name" content="TL;DR">
-<meta property="og:description" content="目录     Hexo常用命令 1. 新建 2. 生成静态页面 3. 开启本地服务器 4. 部署 5. 清除public   Hexo下的Markdown语法 分段 换行 标题 引用 列表 链接 图片 强调（加粗） 代码 水平线        Hexo常用命令以下都是我常用的命令，如需要更详细的文档，请移步到Hexo官方文档 1. 新建1hexo new &quot;new post&quot;">
+<meta property="og:description" content="目录     Hexo常用命令 1. 新建 2. 生成静态页面 3. 开启本地服务器 4. 部署 5. 清除public   Hexo下的Markdown语法 分段 换行 标题 引用 列表 链接 插入图片 插入视频 强调（加粗） 代码 水平线 表格        Hexo常用命令以下都是我常用的命令，如需要更详细的文档，请移步到Hexo官方文档">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.hnuhpj.com/images/avatar.jpg">
 <meta property="article:published_time" content="2019-12-19T16:23:37.000Z">
-<meta property="article:modified_time" content="2019-12-21T17:14:23.230Z">
+<meta property="article:modified_time" content="2020-02-18T09:27:31.426Z">
 <meta property="article:author" content="Shunder">
 <meta property="article:tag" content="学习">
 <meta property="article:tag" content="Hexo">
@@ -247,7 +247,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">542字</span>
+        <span class="post-count">816字</span>
       </span>
     </span>
 
@@ -256,7 +256,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">1分</span>
+        <span class="post-count">3分</span>
       </span>
     </span>
 </div>
@@ -295,10 +295,12 @@
 <li><a href="#yin-yong">引用</a></li>
 <li><a href="#lie-biao">列表</a></li>
 <li><a href="#lian-jie">链接</a></li>
-<li><a href="#tu-pian">图片</a></li>
+<li><a href="#cha-ru-tu-pian">插入图片</a></li>
+<li><a href="#cha-ru-shi-pin">插入视频</a></li>
 <li><a href="#qiang-diao-jia-cu">强调（加粗）</a></li>
 <li><a href="#dai-ma">代码</a></li>
 <li><a href="#shui-ping-xian">水平线</a></li>
+<li><a href="#biao-ge">表格</a></li>
 </ul>
 </li>
 </ul>
@@ -307,9 +309,9 @@
 </div>
 
 <h1><span id="hexo-chang-yong-ming-ling">Hexo常用命令</span><a href="#hexo-chang-yong-ming-ling" class="header-anchor">▷</a></h1><p>以下都是我常用的命令，如需要更详细的文档，请移步到<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo官方文档</a></p>
+<a id="more"></a>
 <h2><span id="1-xin-jian">1. 新建</span><a href="#1-xin-jian" class="header-anchor">▷</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;new post&quot;</span><br></pre></td></tr></table></figure>
 <p>新建的文件在 “hexo/source/_post/“文件夹下</p>
-<a id="more"></a>
 <h2><span id="2-sheng-cheng-jing-tai-ye-mian">2. 生成静态页面</span><a href="#2-sheng-cheng-jing-tai-ye-mian" class="header-anchor">▷</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
 <p>其实就是编译，编译后，会出现一个 public 文件夹，将所有的md文件编译成html文件</p>
 <h2><span id="3-kai-qi-ben-di-fu-wu-qi">3. 开启本地服务器</span><a href="#3-kai-qi-ben-di-fu-wu-qi" class="header-anchor">▷</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
@@ -341,9 +343,14 @@
 </ul>
 <ol>
 <li>哈<h2><span id="lian-jie">链接</span><a href="#lian-jie" class="header-anchor">▷</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[文字](链接地址)</span><br></pre></td></tr></table></figure>
-比如：<a href="www.hnuhpj.com">HNUHPJ</a><h2><span id="tu-pian">图片</span><a href="#tu-pian" class="header-anchor">▷</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](图片地址) &#x2F;&#x2F;图片地址可以是本地路劲，也可以是网络地址</span><br></pre></td></tr></table></figure>
-比如：<img src="/images/avatar.jpg" alt="我的头像"><h2><span id="qiang-diao-jia-cu">强调（加粗）</span><a href="#qiang-diao-jia-cu" class="header-anchor">▷</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**文字** ， __文字__ ， _文字_ ， *文字*</span><br></pre></td></tr></table></figure></li>
+比如：<a href="www.hnuhpj.com">HNUHPJ</a><h2><span id="cha-ru-tu-pian">插入图片</span><a href="#cha-ru-tu-pian" class="header-anchor">▷</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](图片地址) &#x2F;&#x2F;图片地址可以是本地路劲，也可以是网络地址</span><br></pre></td></tr></table></figure>
+比如：<img src="/images/avatar.jpg" alt="我的头像"></li>
 </ol>
+<h2><span id="cha-ru-shi-pin">插入视频</span><a href="#cha-ru-shi-pin" class="header-anchor">▷</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe </span><br><span class="line">    height&#x3D;520 width&#x3D;888 </span><br><span class="line">    src&#x3D;&quot;&#x2F;&#x2F;player.bilibili.com&#x2F;player.html?aid&#x3D;16993752&amp;cid&#x3D;27779929&amp;page&#x3D;1&quot; </span><br><span class="line">    scrolling&#x3D;&quot;no&quot; border&#x3D;&quot;0&quot; frameborder&#x3D;&quot;no&quot;</span><br><span class="line">    framespacing&#x3D;&quot;0&quot; allowfullscreen&#x3D;&quot;true&quot;&gt;</span><br><span class="line">&lt;&#x2F;iframe&gt;</span><br></pre></td></tr></table></figure>
+<iframe height="520" width="888" src="//player.bilibili.com/player.html?aid=16993752&cid=27779929&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">
+</iframe>
+
+<h2><span id="qiang-diao-jia-cu">强调（加粗）</span><a href="#qiang-diao-jia-cu" class="header-anchor">▷</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**文字** ， __文字__ ， _文字_ ， *文字*</span><br></pre></td></tr></table></figure>
 <p><strong>文字</strong> ， <strong>文字</strong> ， <em>文字</em> ， <em>文字</em></p>
 <h2><span id="dai-ma">代码</span><a href="#dai-ma" class="header-anchor">▷</a></h2><p>支持多种编程语言的语法高亮的显示，行号显示。<br><code>```Your code```</code><br>    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line">print(<span class="string">"Hello, World!"</span>);</span><br></pre></td></tr></table></figure></p>
 <h2><span id="shui-ping-xian">水平线</span><a href="#shui-ping-xian" class="header-anchor">▷</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* * *</span><br><span class="line">***</span><br><span class="line">*****</span><br><span class="line">- - -</span><br><span class="line">---------------------------------------</span><br></pre></td></tr></table></figure>
@@ -353,6 +360,46 @@
 <hr>
 <hr>
 <hr>
+<h2><span id="biao-ge">表格</span><a href="#biao-ge" class="header-anchor">▷</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">| 挂载点 | 挂载点中文名 | 文件系统 | 大小 |备注|</span><br><span class="line">|-------|:----------:|:--------:|:---------:|:---------:|</span><br><span class="line">| &#x2F;     | 根分区（必选）| EXT4(推荐) | 最少10G |我是分配了30G|</span><br><span class="line">|swap|交换分区|不设置|4G内存以下分配2G，4G以上可不分配|我分配了8G|</span><br><span class="line">|&#x2F;boot|启动|EXT4|800MB|系统启动文件目录，建议加上|</span><br><span class="line">|&#x2F;home|家目录(推荐)|EXT4(推荐) |最少10G|我剩下的都是|</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>挂载点</th>
+<th align="center">挂载点中文名</th>
+<th align="center">文件系统</th>
+<th align="center">大小</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/</td>
+<td align="center">根分区（必选）</td>
+<td align="center">EXT4(推荐)</td>
+<td align="center">最少10G</td>
+<td align="center">我是分配了30G</td>
+</tr>
+<tr>
+<td>swap</td>
+<td align="center">交换分区</td>
+<td align="center">不设置</td>
+<td align="center">4G内存以下分配2G，4G以上可不分配</td>
+<td align="center">我分配了8G</td>
+</tr>
+<tr>
+<td>/boot</td>
+<td align="center">启动</td>
+<td align="center">EXT4</td>
+<td align="center">800MB</td>
+<td align="center">系统启动文件目录，建议加上</td>
+</tr>
+<tr>
+<td>/home</td>
+<td align="center">家目录(推荐)</td>
+<td align="center">EXT4(推荐)</td>
+<td align="center">最少10G</td>
+<td align="center">我剩下的都是</td>
+</tr>
+</tbody></table>
 
       
 <!-- 添加版权声明 -->
@@ -373,7 +420,7 @@
     2019-12-20
     <br>
     <strong class="update-time">最后更新：</strong>
-    2019-12-22
+    2020-02-18
     <br>
     <strong class="article-titles">本文标题：</strong>
     <a href="https://www.hnuhpj.com/2019/12/20/Hexo常用命令和Hexo下的Markdown语法-GFM/" title="Hexo常用命令和Hexo下的Markdown语法(GFM)" target="_blank">Hexo常用命令和Hexo下的Markdown语法(GFM)</a>
@@ -563,7 +610,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">目录▷</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">Hexo常用命令▷</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">1. 新建▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">2. 生成静态页面▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">3. 开启本地服务器▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">4. 部署▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">5. 清除public▷</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">Hexo下的Markdown语法▷</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">分段▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">换行▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">标题▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">引用▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">列表▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">链接▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">图片▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">强调（加粗）▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">代码▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">水平线▷</span></a>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">目录▷</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">Hexo常用命令▷</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">1. 新建▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">2. 生成静态页面▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">3. 开启本地服务器▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">4. 部署▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">5. 清除public▷</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">Hexo下的Markdown语法▷</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">分段▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">换行▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">标题▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">引用▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">列表▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">链接▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">插入图片▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">插入视频▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">强调（加粗）▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">代码▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">水平线▷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number"></span> <span class="toc-text">表格▷</span></a>
                     </div>
                 </span>
             </div>
@@ -647,7 +694,7 @@
      	
         <!-- 不蒜子统计 -->
         <span>
-                本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                本站总访问量<span id="busuanzi_value_site_uv"></span>次
         </span>
         <span class="post-meta-divider">|</span>
         <span>
