@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.hnuhpj.com/"/>
-  <updated>2020-02-18T07:19:47.339Z</updated>
+  <updated>2020-02-18T09:08:12.366Z</updated>
   <id>https://www.hnuhpj.com/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="https://www.hnuhpj.com/2020/02/18/win10-deepin%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"/>
     <id>https://www.hnuhpj.com/2020/02/18/win10-deepin%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/</id>
     <published>2020-02-18T07:16:01.000Z</published>
-    <updated>2020-02-18T07:19:47.339Z</updated>
+    <updated>2020-02-18T09:08:12.366Z</updated>
     
-    <content type="html"><![CDATA[<h1><span id="bei-jing">背景</span><a href="#bei-jing" class="header-anchor">▷</a></h1><p>一方面是想学习使用Linux，另一方面学校的课程需要用到Linux。<br>固态硬盘上安装了win10系统，准备在机械硬盘上安装deepinOS</p>]]></content>
+    <content type="html"><![CDATA[<h2><span id="xie-zai-qian-mian">写在前面</span><a href="#xie-zai-qian-mian" class="header-anchor">▷</a></h2><p>一方面是想学习使用Linux，另一方面学校的课程需要用到Linux，还有就是因疫情不能出门无聊想折腾。<br>固态硬盘上安装了win10系统，准备在机械硬盘上安装deepinOS。<br>听闻deepin简单、易用、美观，顺便支持一下国产。<br>[我的设备] Dell G7</p><h2><span id="zhun-bei-gong-zuo">准备工作</span><a href="#zhun-bei-gong-zuo" class="header-anchor">▷</a></h2><ol><li>一个U盘（最小5G）或一张光盘以及光驱；提前转移或备份重要数据。</li><li>在<a href="https://www.deepin.org/" target="_blank" rel="noopener">深度科技官方网站</a>下载<a href="https://www.deepin.org/download/" target="_blank" rel="noopener">镜像文件</a>和官网提供的<a href="https://www.deepin.org/original/deepin-boot-maker/" target="_blank" rel="noopener">深度启动盘制作工具</a>。官网和论坛有时会出现504 Gateway Time-out，可以多刷新几次或者稍后再试。</li><li>下载<a href="http://www.diskgenius.cn/download.php" target="_blank" rel="noopener">DiskGenius 分区工具</a></li><li>查看设备的BIOS启动方式，Dell笔记本是开机按F2。</li></ol><h2><span id="kai-shi">开始</span><a href="#kai-shi" class="header-anchor">▷</a></h2><h3><span id="md5-xiao-yan">MD5 校验</span><a href="#md5-xiao-yan" class="header-anchor">▷</a></h3><ul><li>下载深度操作系统镜像完成后，需要对其进行校验，非官方或不完整的镜像将不能用于深度操作系统的安装；</li><li>Windows系统：<br>下载<a href="http://www.keir.net/download/hash.zip" target="_blank" rel="noopener">MD5校验工具</a>，校验您下载的镜像的MD5值与<a href="https://www.deepin.org/download/" target="_blank" rel="noopener">下载页面</a>提供的 MD5 值是否一致。( MD5 值在立即下载按钮下方)</li></ul><h3><span id="fen-qu">分区</span><a href="#fen-qu" class="header-anchor">▷</a></h3><ul><li><p>用DiskGenius 分区工具或Windows的分区管理工具查看机械硬盘是否为动态磁盘（Linux不支持识别Windows额动态磁盘）。如果是动态磁盘，安装时将不能识别分区，要先把数据拷贝然后重新格式化这个机械硬盘。DiskGenius免费版不能将动态磁盘转换为基本磁盘。</p></li><li><p>用DiskGenius 分区工具在机械硬盘后方分出至少 25 GB 的空闲空间，我这里是 80 GB。</p></li></ul><h3><span id="yong-shen-du-qi-dong-pan-zhi-zuo-gong-ju-zhi-zuo-hao-qi-dong-pan">用深度启动盘制作工具制作好启动盘。</span><a href="#yong-shen-du-qi-dong-pan-zhi-zuo-gong-ju-zhi-zuo-hao-qi-dong-pan" class="header-anchor">▷</a></h3><ul><li>插入要制作的U盘，双击启动盘制作工具，选择下载好的系统镜像，再选择要制作的U盘，制作期间请不要触碰U盘，制作完成请选择重启电脑。</li></ul><h3><span id="an-zhuang-guo-cheng">安装过程</span><a href="#an-zhuang-guo-cheng" class="header-anchor">▷</a></h3><p>开机进入BIOS界面，关闭 Secure Boot (安全启动)。将启动盘设置为第一启动项。进入安装界面后，选择语言，创建用户。<br>到最重要的一步，选择安装位置。选高级模式，用空闲空间分配各个挂载点的大小。</p><table><thead><tr><th>挂载点</th><th align="center">挂载点中文名</th><th align="center">文件系统</th><th align="center">大小</th><th align="center">备注</th></tr></thead><tbody><tr><td>/</td><td align="center">根分区（必选）</td><td align="center">EXT4(推荐)</td><td align="center">最少10G</td><td align="center">我是分配了30G</td></tr><tr><td>swap</td><td align="center">交换分区</td><td align="center">不设置</td><td align="center">4G内存以下分配2G，4G以上可不分配</td><td align="center">我分配了8G</td></tr><tr><td>/boot</td><td align="center">启动</td><td align="center">EXT4</td><td align="center">800MB</td><td align="center">系统启动文件目录，建议加上</td></tr><tr><td>/home</td><td align="center">家目录(推荐)</td><td align="center">EXT4(推荐)</td><td align="center">最少10G</td><td align="center">我剩下的都是</td></tr></tbody></table><ul><li>另外提一句，如果系统安装在移动硬盘上，要记得分配500MB给efi分区，否则到了其他电脑上将找不到系统。</li></ul><p>确认设置无误后，一路点安装、确定。<br>接着就是喝杯咖啡时间 0.0</p><h4><span id="guan-fang-shi-pin-yan-shi">官方视频演示</span><a href="#guan-fang-shi-pin-yan-shi" class="header-anchor">▷</a></h4><iframe height="520" width="888" src="//player.bilibili.com/player.html?aid=16993752&cid=27779929&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe><h3><span id="shan-hou">善后</span><a href="#shan-hou" class="header-anchor">▷</a></h3><ul><li>解决可能或潜在的引导问题。</li></ul><p>该问题可能导致开机卡logo，无法进入windows或deepin桌面等问题。<br>进入deepin系统后，在深度商店下载系统修复工具，修复引导。<br>若无法进入deepin系统，可以在U盘安装deepin live，在live中修复引导。</p><ul><li>解决显卡驱动问题。</li></ul><p>可能导致进入桌面，关机和重启时的卡顿或死机。<br>进入deepin系统后，启动器找到显卡驱动管理器，选择使用大黄蜂方案，修复引导。修复过程将多次重启。</p><h3><span id="xie-zai-hou-mian">写在后面</span><a href="#xie-zai-hou-mian" class="header-anchor">▷</a></h3><p>一开始用得是移动硬盘，没想到折腾了2天，还是有重新插拔无法进入系统的问题，应该是一开始的分区没分好，加上死机时强制断电关机（当时没学会Linux的安全关机），导致文件系统损坏，只能装在机械硬盘上了。<br>下次将讲讲我在deepin上用到的软件。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1&gt;&lt;span id=&quot;bei-jing&quot;&gt;背景&lt;/span&gt;&lt;a href=&quot;#bei-jing&quot; class=&quot;header-anchor&quot;&gt;▷&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;一方面是想学习使用Linux，另一方面学校的课程需要用到Linux。&lt;br&gt;固态硬盘上安装了win10系
+        &lt;h2&gt;&lt;span id=&quot;xie-zai-qian-mian&quot;&gt;写在前面&lt;/span&gt;&lt;a href=&quot;#xie-zai-qian-mian&quot; class=&quot;header-anchor&quot;&gt;▷&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;一方面是想学习使用Linux，另一方面学校的课程需要用到Linu
       
     
     </summary>
