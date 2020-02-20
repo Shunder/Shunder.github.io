@@ -144,37 +144,10 @@
   </entry>
   
   <entry>
-    <title>题目：单峰数组</title>
-    <link href="https://www.hnuhpj.com/2019/12/18/%E9%A2%98%E7%9B%AE%EF%BC%9A%E5%8D%95%E5%B3%B0%E6%95%B0%E7%BB%84/"/>
-    <id>https://www.hnuhpj.com/2019/12/18/%E9%A2%98%E7%9B%AE%EF%BC%9A%E5%8D%95%E5%B3%B0%E6%95%B0%E7%BB%84/</id>
-    <published>2019-12-18T13:55:37.000Z</published>
-    <updated>2019-12-21T17:15:45.178Z</updated>
-    
-    <content type="html"><![CDATA[<h1><span id="cheng-xu-she-ji-xun-lian-2019-zai-xian-kao-shi-ti-ku">程序设计训练2019-在线考试题库</span><a href="#cheng-xu-she-ji-xun-lian-2019-zai-xian-kao-shi-ti-ku" class="header-anchor">▷</a></h1><h2><span id="dang-qian-bian-cheng-ti-dan-feng-shu-zu">当前编程题：单峰数组</span><a href="#dang-qian-bian-cheng-ti-dan-feng-shu-zu" class="header-anchor">▷</a></h2><h3><span id="wen-ti-miao-shu">【问题描述】</span><a href="#wen-ti-miao-shu" class="header-anchor">▷</a></h3><p>一个整数数组被称为单峰数组，当</p><ul><li>第一部分为严格递增序列</li><li>中间部分为常数序列</li><li>最后部分为严格递减序列</li><li>第一部分和最后部分都可以缺失</li></ul><a id="more"></a><p>例如，下列3个数组的单峰的：[5, 7, 11, 11, 2, 1]、[4, 4, 2]、[7]，<br>但是以下3个数组不是单峰的：[5, 5, 6, 6, 1]、[1, 2, 1, 2]、[4, 5, 5, 6]。<br>编写程序判断一个数组是否为单峰的。</p><h3><span id="shu-ru-xing-shi">【输入形式】</span><a href="#shu-ru-xing-shi" class="header-anchor">▷</a></h3><p>输入的第一行为一个整数T，表示测试用例的个数。<br>接下来的2T行，每两行对应一个测试用例，每个用例的第一行为一个正整数n，表示数组中的元素个数，接下来一行为n个整数，表示数组的n个元素</p><h3><span id="shu-chu-xing-shi">【输出形式】</span><a href="#shu-chu-xing-shi" class="header-anchor">▷</a></h3><p>输出有T行，每行对应一个测试用例的结果，如果为单峰数组，输出“YES”，否则输出“NO”。</p><h3><span id="yang-li-shu-ru">【样例输入】</span><a href="#yang-li-shu-ru" class="header-anchor">▷</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">6</span><br><span class="line">1 5 5 5 4 2</span><br><span class="line">5</span><br><span class="line">10 20 30 20 10</span><br><span class="line">4</span><br><span class="line">1 2 1 2</span><br></pre></td></tr></table></figure><h3><span id="yang-li-shu-chu">【样例输出】</span><a href="#yang-li-shu-chu" class="header-anchor">▷</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">YES</span><br><span class="line">YES</span><br><span class="line">NO</span><br></pre></td></tr></table></figure><h3><span id="yang-li-shuo-ming">【样例说明】</span><a href="#yang-li-shuo-ming" class="header-anchor">▷</a></h3><h3><span id="ping-fen-biao-zhun">【评分标准】</span><a href="#ping-fen-biao-zhun" class="header-anchor">▷</a></h3>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;程序设计训练2019-在线考试题库&quot;&gt;&lt;a href=&quot;#程序设计训练2019-在线考试题库&quot; class=&quot;headerlink&quot; title=&quot;程序设计训练2019-在线考试题库&quot;&gt;&lt;/a&gt;程序设计训练2019-在线考试题库&lt;/h1&gt;&lt;h2 id=&quot;当前编程题：单峰数组&quot;&gt;&lt;a href=&quot;#当前编程题：单峰数组&quot; class=&quot;headerlink&quot; title=&quot;当前编程题：单峰数组&quot;&gt;&lt;/a&gt;当前编程题：单峰数组&lt;/h2&gt;&lt;h3 id=&quot;【问题描述】&quot;&gt;&lt;a href=&quot;#【问题描述】&quot; class=&quot;headerlink&quot; title=&quot;【问题描述】&quot;&gt;&lt;/a&gt;【问题描述】&lt;/h3&gt;&lt;p&gt;一个整数数组被称为单峰数组，当&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;第一部分为严格递增序列&lt;/li&gt;
-&lt;li&gt;中间部分为常数序列&lt;/li&gt;
-&lt;li&gt;最后部分为严格递减序列&lt;/li&gt;
-&lt;li&gt;第一部分和最后部分都可以缺失&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="学习" scheme="https://www.hnuhpj.com/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Hello World</title>
-    <link href="https://www.hnuhpj.com/1970/01/01/hello-world/"/>
-    <id>https://www.hnuhpj.com/1970/01/01/hello-world/</id>
-    <published>1970-01-01T00:00:00.000Z</published>
+    <link href="https://www.hnuhpj.com/2019/12/19/hello-world/"/>
+    <id>https://www.hnuhpj.com/2019/12/19/hello-world/</id>
+    <published>2019-12-19T11:31:06.163Z</published>
     <updated>2019-12-19T12:31:50.505Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2><span id="quick-start">Quick Start</span><a href="#quick-start" class="header-anchor">▷</a></h2><a id="more"></a><h3><span id="create-a-new-post">Create a new post</span><a href="#create-a-new-post" class="header-anchor">▷</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3><span id="run-server">Run server</span><a href="#run-server" class="header-anchor">▷</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3><span id="generate-static-files">Generate static files</span><a href="#generate-static-files" class="header-anchor">▷</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3><span id="deploy-to-remote-sites">Deploy to remote sites</span><a href="#deploy-to-remote-sites" class="header-anchor">▷</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
