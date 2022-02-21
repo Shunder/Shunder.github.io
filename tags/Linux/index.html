@@ -287,9 +287,18 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>
+    		&copy; 2022 何佩奇   
 
-     	<% if (theme.busuanzi && theme.busuanzi.enable){ %>
+    	</div>
+
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+
+
+     	
         <!-- 不蒜子统计 -->
         <span>
                 本站总访问量<span id="busuanzi_value_site_pv"></span>次
@@ -299,7 +308,7 @@
                 本站访客数<span id="busuanzi_value_site_uv"></span>人
         </span>
         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  <% } %>   		
+     		
 
 <!--《添加网站运行时间 -->
 <!--<br/>-->
@@ -334,25 +343,16 @@
 </script>
 <!-- 添加网站运行时间》 -->
 
-    	</div>
-
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
-    </div>
-  </div>
-
-
 
   <!-- 《网站备案号 -->
-<% if (theme.icp && theme.icp.enable && theme.icp.id){ %>
+
     <div class="BeiAn-info">
         <img src="https://static.dy208.cn/o_1dfilp8ruo521thr1hvf18ji17soa.png" title="备案管理系统">
         <a href="http://www.beian.miit.gov.cn/" style="color:#f72b07" target="_blank" title="备案号">
-            <%- theme.icp.id %>
+            湘ICP备18022854号-1
         </a>
     </div>
-<% } %>
+
 <!-- 网站备案号》 -->
 
 
