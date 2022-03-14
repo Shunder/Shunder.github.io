@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>TL;DR</title>
+  
+  <subtitle>与其感慨路难行，不如马上出发。</subtitle>
+  <link href="https://shunder.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://shunder.github.io/"/>
+  <updated>2022-03-12T19:48:26.333Z</updated>
+  <id>https://shunder.github.io/</id>
+  
+  <author>
+    <name>何佩奇</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>tqdm——一个快速，可扩展的Python进度条</title>
+    <link href="https://shunder.github.io/posts/62898/"/>
+    <id>https://shunder.github.io/posts/62898/</id>
+    <published>2022-03-12T09:07:41.000Z</published>
+    <updated>2022-03-12T19:48:26.333Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="官方文档">官方文档</h2><p><a href="https://github.com/tqdm/tqdm">官方github页面</a></p><p><a href="https://tqdm.github.io/">官方文档</a></p><h2 id="实现效果">实现效果</h2><p><imgsrc="https://gitee.com/123r/pic-bed/raw/master/img/68747470733a2f2f696d672e7471646d2e6d6c2f7471646d2e676966"alt="Screenshot" /></p><p>在<code>pycharm</code>中，在深度学习进程中可以将训练过程用进度条的形式展现出来，会让训练界面更加的美观。</p><p><imgsrc="https://gitee.com/123r/pic-bed/raw/master/img/image-20220312172010223.png"alt="image-20220312172010223" /></p><h2 id="安装">安装</h2><h3 id="pip">pip</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install tqdm</span><br></pre></td></tr></table></figure><h3 id="conda">conda</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install -c conda-forge tqdm</span><br></pre></td></tr></table></figure><p>其他安装方式参考<ahref="https://github.com/tqdm/tqdm">官方github页面</a></p><h2 id="用法">用法</h2><h3 id="基于迭代器">基于<ahref="https://www.jianshu.com/p/6b7806c4f54a">迭代器</a></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> trange</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> trange(<span class="number">100</span>):</span><br><span class="line">    sleep(<span class="number">0.01</span>)</span><br></pre></td></tr></table></figure><p><code>trange(i)</code> 是 <code>tqdm(range(i))</code>的特殊优化</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> tqdm(<span class="built_in">range</span>(<span class="number">100</span>)):</span><br><span class="line">    sleep(<span class="number">0.01</span>)</span><br></pre></td></tr></table></figure><p>也可用于嵌套循环</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> trange(<span class="number">100</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> trange(<span class="number">100</span>):</span><br><span class="line">        sleep(<span class="number">0.01</span>)</span><br></pre></td></tr></table></figure><h2 id="踩过的坑">踩过的坑</h2><h3id="解决pycharm中进度条以红色错误信息的形式输出">解决pycharm中进度条以红色错误信息的形式输出：</h3><p><imgsrc="https://gitee.com/123r/pic-bed/raw/master/img/image-20220312173245660.png"alt="image-20220312173245660" /></p><p>增加参数 <code>file=sys.stdout,</code></p><h3id="解决pycharm中进度条并不覆盖输出而是打印多条">解决pycharm中进度条并不覆盖输出而是打印多条：</h3><p>参考<a href="https://github.com/tqdm/tqdm/issues/307">issue</a></p><p><imgsrc="https://gitee.com/123r/pic-bed/raw/master/img/image-20220312174434870.png"alt="image-20220312174434870" /></p><p>增加参数<code>position=0,leave=False</code>，并在<strong>编辑运行/调试配置</strong>中勾选<strong>模拟输出控制台中的终端</strong>，并通过设置<code>ncols</code>参数限制进度条宽度</p><p><imgsrc="https://gitee.com/123r/pic-bed/raw/master/img/image-20220312174659378.png"alt="image-20220312174659378" /></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> tqdm(<span class="built_in">range</span>(<span class="number">100</span>),file=sys.stdout,</span><br><span class="line">              position=<span class="number">0</span>,leave=<span class="literal">False</span>,ncols=<span class="number">50</span>):</span><br><span class="line">   <span class="keyword">for</span> j <span class="keyword">in</span> tqdm(<span class="built_in">range</span>(<span class="number">100</span>),file=sys.stdout,</span><br><span class="line">                 position=<span class="number">1</span>,leave=<span class="literal">False</span>,ncols=<span class="number">50</span>):</span><br><span class="line">        sleep(<span class="number">0.01</span>)</span><br></pre></td></tr></table></figure><p>最终效果：</p><p><imgsrc="https://gitee.com/123r/pic-bed/raw/master/img/image-20220312175237156.png"alt="image-20220312175237156" /></p><h2 id="常用参数">常用参数</h2><p>参考 <ahref="https://github.com/tqdm/tqdm#parameters">Paramters</a></p><ul><li><p><strong><em>disable</em> <em>:</em> <em>bool,optional</em></strong></p><p>进度条显示开关[默认: <code>False</code>]</p></li><li><p><strong><em>desc</em> <em>:</em> <em>str,optional</em></strong></p><p>进度条前缀</p></li><li><p><strong><em>leave</em> <em>:</em> <em>bool,optional</em></strong></p><p>[默认: <code>True</code>], 在迭代结束时保留进度条的所有痕迹若设为<code>None</code>,则仅当<code>position=0</code>时清除痕迹</p></li><li><p><strong><em>file</em> <em>:</em><em><code>io.TextIOWrapper</code> or <code>io.StringIO</code>,optional</em></strong></p><p>设为[default: <code>sys.stderr</code>]，用错误信息的形式输出</p><p>设为<code>sys.stdout</code>，可以正常显示</p></li><li><p><strong><em>ncols</em> <em>:</em> <em>int,optional</em></strong></p><p>整行输出信息的宽度</p></li><li><p><strong><em>position</em> <em>:</em> <em>int,optional</em></strong></p><p>设置打印进度条的位置（从0开始），可以设置多个进度条</p></li><li><p><strong><em>colour</em> <em>:</em> <em>str,optional</em></strong></p><p>[<code>hex (#00ff00), BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE</code>]</p></li><li><p><strong><em>mininterval</em> <em>:</em> <em>float,optional</em></strong></p><p>最小的更新时间 [default: <code>0.1</code>] 秒</p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;官方文档&quot;&gt;官方文档&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/tqdm/tqdm&quot;&gt;官方github页面&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://tqdm.github.io/&quot;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;h</summary>
+      
+    
+    
+    
+    <category term="技术学习" scheme="https://shunder.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="Python" scheme="https://shunder.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/Python/"/>
+    
+    
+    <category term="学习" scheme="https://shunder.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="Python" scheme="https://shunder.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>大气散射模型-图像去雾基础知识（一）</title>
+    <link href="https://shunder.github.io/posts/9973/"/>
+    <id>https://shunder.github.io/posts/9973/</id>
+    <published>2022-03-09T08:40:54.000Z</published>
+    <updated>2022-03-12T19:48:26.434Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="知识背景">知识背景</h2><p>近些年来，出现了众多的单幅图像去雾算法，应用比较广泛的有：</p><ul><li>直方图均衡化去雾算法</li><li>Retinex去雾算法</li><li>暗通道先验去雾算法</li><li>基于卷积神经网络的DehazeNet去雾算法</li></ul><p>其主要可以分为 3类：基于图像增强的去雾算法、基于图像复原的去雾算法和基于 CNN的去雾算法。</p><table><colgroup><col style="width: 9%" /><col style="width: 45%" /><col style="width: 45%" /></colgroup><thead><tr class="header"><th>类别</th><th>简介</th><th>代表算法</th></tr></thead><tbody><tr class="odd"><td>基于图像增强</td><td>通过图像增强技术突出图像细节，提升对比度，使之看起来更加清晰，这类算法的适用性较广。</td><td>Retinex：根据成像原理，消除了反射分量的影响，达到了图像增强去雾的效果<br />直方图均衡化：使图像的像素分布更加均匀，放大了图像的细节<br />偏微分方程:将图像视作一个偏微分方程，通过计算梯度场提高对比度<br />小波变换:对图像进行分解，放大有用的部分</td></tr><tr class="even"><td>基于图像复原</td><td>基于大气散射物理学模型，通过对大量有雾图像和无雾图像进行观察总结，得到其中存在的一些映射关系，然后根据有雾图像的形成过程来进行逆运算，从而恢复清晰图像。</td><td><strong>暗通道先验</strong>:通过对大量无雾图像进行特征分析，找到了无雾图像与大气散射模型中某些参数的先验关系。</td></tr><tr class="odd"><td><strong>基于 CNN</strong></td><td>两种思路：<br />1. 使用 CNN生成大气散射模型的某些参数，然后再根据大气散射模型来恢复无雾图像<br />2. 使用 CNN (例如 GAN)直接根据模糊图像生成无雾的清晰图像</td><td>DehazeNet ，AOD-Net</td></tr></tbody></table><p>目前训练神经网络所采用的数据集均是通过合成得到的，比如使用<ahref="https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html"><em>NYU-Depth</em><em>V2</em>-纽约大学各种室内场景数据集</a>，结合RGB和深度图像，可以合成室内有雾图像数据集，而这一过程也用到了大气散射模型。</p><h2 id="大气散射模型">大气散射模型</h2><p>此模型描述了大气散射现象，分析了雾天退化图像的形成过程。</p><p>大气中的水汽和颗粒物会因大气散射而产生两种副作用：</p><ol type="1"><li>目标物体进入相机的入射光被<strong>衰减</strong>（入射光衰减项）</li><li>将周围的光<strong>反射</strong>到相机，导致图像模糊和对比度降低（环境光成分项）</li></ol><p><imgsrc="https://gitee.com/123r/pic-bed/raw/master/img/image-20220309171008482.png"alt="image-20220309171008482" /></p><p><strong>入射光衰减项</strong>描述的是入射光穿越介质到摄像设备衰减的部分，入射光的衰减程度随物体到摄像机的距离的增大而指数衰减。这部分模型有两个假设条件，</p><ol type="1"><li>在目标物体发生漫反射，</li><li>假设物体和摄像机之间是均匀介质。</li></ol><p>在两种假设前提下，入射光的衰减过程可以用公式表示： <spanclass="math display">\[J(d)=J(x)×e^{-\beta\cdot d}\tag{1}\]</span> 其中， <spanclass="math inline">\(d\)</span>表示物体到摄像机之间的距离；<spanclass="math inline">\(\beta\)</span>表示传输介质的散射系数，在假设传输介质均匀的条件下，<span class="math inline">\(\beta\)</span>是一个固定值。<spanclass="math inline">\(J(0)\)</span>表示无雾图像即 <spanclass="math inline">\(d\)</span>为 0 时的物体原始图像。 <spanclass="math inline">\(J(d)\)</span>表示目标物体衰减后的图像。<code>NYU-Depth V2</code>数据集中存储的深度图信息就是<spanclass="math inline">\(d\)</span>，单位是米。</p><p><strong>环境光成分项</strong>描述的是由介质中的颗粒物反射到摄像机成像过程中的反射光，这一部分光导致图像偏向与灰白色。环境光成分项随物体到摄像距离增加而增加，公式：<span class="math display">\[A(d)=A_∞\cdot (1-e^{-\beta\cdot d})\tag{2}\]</span> 其中，<spanclass="math inline">\(A_∞\)</span>表示我无穷远处的环境光值， <spanclass="math inline">\(d\)</span> 表示目标物体到摄像机之间的距离，<spanclass="math inline">\(\beta\)</span>表示传输介质的散射系数，在本文假设的介质均匀条件下为一个定值。</p><p>有雾图像由上述两个部分共同决定,即： <span class="math display">\[I(x)=J(d)+A(d)\tag{3}\]</span> 展开得： <span class="math display">\[I(x)=J(x)\cdot t(x)+(1-t(x))\cdot A\]</span> 其中，<spanclass="math inline">\(I(x)\)</span>表示雾霾天气下有雾图像，<spanclass="math inline">\(J(x)\)</span>表示原始的无雾图像，<spanclass="math inline">\(t(x)=e^{-\beta\cdot d}\)</span>表示大气的折射率，<span class="math inline">\(A\)</span> 为全球大气光值。</p><p>一个叫<code>DehazeNet</code>的去雾网络就是通过估计有雾图像的透射率，基于大气散射模型理论恢复出无雾的清晰图像。</p><h2 id="参考文献">参考文献</h2><p>[1]彭涛. <ahref="https://kns.cnki.net/kcms/detail/detail.aspx?lid=WEEvREcwSlJHSldTTEYzVnBFcVd5VnNaRFZlc08xV0NJZEVrWURBVU5Mbz0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4ggI8Fm4gTkoUKaID8j8gFw!!&amp;dbname=CMFD2021&amp;filename=1020404966.nh&amp;dbcode=CMFD">基于深度学习的回转窑燃煤图像去雾与燃烧状态识别研究</a>[D].湖南大学,2020.DOI:10.27135/d.cnki.ghudu.2020.000982.</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;知识背景&quot;&gt;知识背景&lt;/h2&gt;
+&lt;p&gt;近些年来，出现了众多的单幅图像去雾算法，应用比较广泛的有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;直方图均衡化去雾算法&lt;/li&gt;
+&lt;li&gt;Retinex去雾算法&lt;/li&gt;
+&lt;li&gt;暗通道先验去雾算法&lt;/li&gt;
+&lt;li&gt;基于卷积</summary>
+      
+    
+    
+    
+    <category term="知识学习" scheme="https://shunder.github.io/categories/%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="图像处理" scheme="https://shunder.github.io/categories/%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    
+    
+    <category term="学习" scheme="https://shunder.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="图像处理" scheme="https://shunder.github.io/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用于图像分类的MobileNetV3算法</title>
+    <link href="https://shunder.github.io/posts/34682/"/>
+    <id>https://shunder.github.io/posts/34682/</id>
+    <published>2022-03-04T04:54:47.000Z</published>
+    <updated>2022-03-12T19:48:26.440Z</updated>
+    
+    <content type="html"><![CDATA[<!-- toc --><p><imgsrc="https://gitee.com/123r/pic-bed/raw/master/img/image-20220304130605359.png"alt="image-20220304130605359" /></p><h1id="用于图像分类的mobilenetv3算法">用于图像分类的MobileNetV3算法</h1><h2 id="摘要">摘要</h2><p>​卷积神经网络（CNN）是一种深度神经网络，通过多个卷积层提取图像特征，广泛应用于图像分类。随着移动设备处理的图像数据量的不断增加，神经网络在移动终端上的应用越来越广泛。然而，这些网络需要大量的计算和先进的硬件支持，很难适应移动设备。本文论证了MobileNetV3对于移动终端上的实际图像分类任务，可以在效率和准确性之间取得较好的平衡。在我们的实验中，比较了MobileNetV3和其他几种常用的预训练CNN模型在不同图像数据集上的分类性能。选择的数据集都很好地代表了移动设备的应用场景。结果表明，作为一种轻量级的神经网络，与其他大型网络相比，MobileNetV3以有效的方式实现了良好的精度性能。此外，ROC证实了MobileNetV3相对于其他实验模型的优势。并对适用于MobileNetV3的图像数据集的特征提出了一些猜想。</p><h4id="关键词-卷积神经网络图像分类移动设备mobilenetv3">关键词-卷积神经网络；图像分类；移动设备；MobileNetV3</h4><span id="more"></span><h2 id="i.-绪论">I. 绪论</h2><p>​ 卷积神经网络（Convolutional NeuralNetwork，CNN）由于其在图像分类、分割和其他计算机视觉问题中的扩展应用而受到极大关注。CNN通常由两部分组成：特征提取部分（由卷积层和池化层组成）和分类部分（包含大量堆叠的全连接层）。在第一部分中，卷积层中的核逐步扫描输入图像，将每个核中的权重乘以像素值，并组合总和来创建传递到下一层的新图像。池化层在下采样中起到减少数据数量和节省计算资源的作用。在第二部分中，图像首先通过flatten层转换为一维数组。接下来的全连接层使用这个数组作为输入，并通过应用线形组合和非线性激活函数来产生预测标签。</p><p>​CNN由于其分层提取深层特征的优势，目前被广泛应用与解决现实世界中的问题，比如自动驾驶和医学影像诊断。由于日常场景中的大量任务，将深度学习应用于移动设备上的日常任务变得非常自然。因此，成功地将CNN应用于移动终端是非常重要的。由于移动设备上有限的计算能力，对模型效率和小内存有很高的要求。</p><p>​有许多为不同任务设计的CNN架构。其中，有些常用于图像分类问题，如Inception、AlexNet和VGG16。然而，移动设备中的分类任务不仅要求高精度，而且更设计的是要求低存储成本和高计算效率，这就产生了适用于移动终端的模型。我们选择MobileNetV3作为我们的主要研究对象，它是轻量级的CNN模型，在准确性和效率之间取得了很好的平衡。</p><p>​本文比较了MobileNetV3、AlexNet、Inception和ShuffleNet在不同数据集上的性能，验证了MobileNetV3的高效性和适应性。本文的主要贡献如下：</p><ol type="1"><li><p>Fruits 360，10 Monkey Species和Bird SpeciesClassification作为移动设备上常见图像数据集的代表，用于训练和评估所选神经网络的性能。</p></li><li><p>MobileNetV3、AlexNet、InceptionV3和ShuffleNetV2应用于与移动场景相关的多个图像分类任务。</p></li><li><p>采用多个评估指标来分析不同模型在不同数据集上的性能。</p></li><li><p>在实验结果的基础上，总结了MobileNetV3在图像分类方面的特点及其在移动设备上的优势。</p></li></ol><p>​本文的其余部分组织如下。在第二章中，我们描述了MobileNetV3的主要结构以及实验中其他模型的特点。在第三章中，介绍了数据集，并评估了MobielNetV3和其他模型的性能。实验结果和分析也见第三章。第四章总结了MobileNetV3的特点，并讨论了我们未来的工作。</p><h2 id="ii.-模型的架构">II. 模型的架构</h2><p>​近年来，面向移动终端的CNN网络发展迅速。从2017年到2019年，MobileNet的三个版本在架构上不断改进。MobileNetV1是参考传统的VGG架构开发的，同时引入了深度可分离卷积。在此基础上，一年后退出了具有线形瓶颈和反向残差的MobileNetV2。在NAS和NetAdapt网络搜索架构优化的帮助下，MobileNetV3在2019年年中通过删除开销较高的层和使用h-swish非线性函数代替ReLU来改进，同时提高效率和相对准确性。</p><p>​根据事例目标使用资源的高低，将MobileNetV3定义为MobileNetV3-Small和MobileNTV3-Large两种架构复杂度不同的模型。</p><h5id="表一-mobilenetv3-large的规格expand表示示用于从层的输入扩展特征空间的卷积滤波器的数量se指示在该块中是否存在挤压和激励nl表示该块的非线性类型bn表示批标准化">表一MobileNetv3-Large的规格。#expand表示示用于从层的输入扩展特征空间的卷积滤波器的数量。SE指示在该块中是否存在挤压和激励。NL表示该块的非线性类型。BN表示批标准化。</h5><p><imgsrc="https://gitee.com/123r/pic-bed/raw/master/img/image-20220304104154029.png"alt="image-20220304104154029" /></p><p>MobileNetV3-Large的完整规格见表I。</p><p>根据详细的层规范，模型的整体架构可以如图1所示。</p><p><imgsrc="https://gitee.com/123r/pic-bed/raw/master/img/image-20220304104726178.png"alt="image-20220304104726178" /></p><h5id="图1-mobilenetv3架构mobilenetv3-large和mobilenetv3-small的通用架构相同">图1MobileNetV3架构。MobileNetv3-Large和MobileNetv3-Small的通用架构相同。</h5><p>​MobileNetV3-Small的一般结构与MobileNetV3-Large几乎相同。此外，MobileNetV3-Small缩短了四层，如表II所示。</p><h5 id="表ii-mobilenetv3-small规格所有符号与表i相同">表IIMobileNetV3-Small规格。所有符号与表I相同。</h5><p><imgsrc="https://gitee.com/123r/pic-bed/raw/master/img/image-20220304104824614.png"alt="image-20220304104824614" /></p><h3 id="a.-深度可分离卷积"><em>A. 深度可分离卷积</em></h3><p>​为了提高计算效率，引入了深度可分离卷积。它与传统的卷积非常相似。与每层只有一次卷积计算的传统卷积不同，深度可分离卷积的卷积计算分为两个阶段。在第一阶段中，深度卷积对每个输入通道应用单个卷积滤波器。在第二阶段中，将逐点卷积（卷积）应用于深度卷积的输出的所有通道。总之，深度可分离卷积通过减少计算量来提高计算速度，但会牺牲一些精度。深度可分离卷积是许多高效模型（如MobileNetV1-V3）的核心技术。</p><h3 id="b.-线性瓶颈"><em>B. 线性瓶颈</em></h3><p>​为了在不丢失太多信息的情况下从高维空间中提取特征，MobileNetV2提出了线性瓶颈来降低输入的维数。线性瓶颈指的是一个瓶颈层，它是一个带有1×1滤波器的卷积层，与线性激活函数相结合。因为传统的ReLU函数变换提供了具有信息丢失可能性的非线性，所以MobileNetV2转而将线性瓶颈层插入到卷积块中（假设特征流是低维且可捕获的）。</p><h3 id="c.-反向残差"><em>C. 反向残差</em></h3><p>​作为一种更安全、更有效的方法来提取输入数据的所有必要信息，瓶颈层取代了ReLU层。在瓶颈块的开始处还有一个扩展层。此外，MobileNetV2直接在瓶颈之间使用捷径，以更好地跨多个层传播梯度，并防止梯度丢失和爆炸。反向残差块经过测试，其有效作用几乎与残差块相同，同时显著降低了内存开销。</p><h3 id="d.-网络架构搜索"><em>D. 网络架构搜索</em></h3><p>​通过强化学习和递归神经网络（RNN），将网络架构搜索应用于MobileNetV3，以确定受限硬件平台的最优架构。它是一种为神经网络的体系结构构造搜索空间，并用强化</p><p>学习在分层搜索空间中高效搜索，以逼近特定任务模型的最佳结构的方法。例如，基于MobileNetV2的原始设计，将MobileNetV3的扩展层重新设计为图2。</p><p>​由于RNN控制器和搜索空间的相似性，MobileNetV3使用MnasNet-A1作为初始模型。此外，对强化学习中的奖励设计进行了修改，以更好地适应小型移动模型。在层的类型固定后，使用NetAdapt（一种微调每层中超参数的方法）来优化模型。</p><p><imgsrc="https://gitee.com/123r/pic-bed/raw/master/img/image-20220304105920919.png"alt="image-20220304105920919" /></p><h5 id="图2-原始末级和重新设计的末级的比较">图2原始末级和重新设计的末级的比较。</h5><h3 id="e.-swish函数"><em>E. Swish函数</em></h3><p>​为了获得更高的精度，引入了一种新的激活函数swish来代替ReLU函数。该函数定义为：<span class="math display">\[swish(x)=x⋅\sigma(x)\]</span> ​然而，swish公式中的sigmoid函数可能在移动设备上消耗大量的计算资源。为了解决这个问题，MobileNetv3的作者使用Relu6函数来近似Swish中的Sigmoid函数，并</p><p>产生Swish函数的近似，称为Swish的hard版本（H-Swish），定义为： <spanclass="math display">\[h-swish[x]=x\frac{ReLU6(x+3)}{6}\]</span></p><h3 id="f.-实验中的额外模型"><em>F. 实验中的额外模型</em></h3><p>​AlexNet是一个非常初始的深度CNN，开始使用ReLU非线性而不是tanh函数，并且可以放在多个GPU上。适用于高分辨率图像。然而，该模型的主要缺点是由于大量的参数而导致严重的过拟合问题。</p><p>​InceptionV3首先将批处理归一化层应用于数据的传播，以加速梯度下降的过程。InceptionV3中的Inception模块经过优化，与InceptionV2相比具有更多分支。此外，在InceptionV3中实现了分解为小卷积的关键见解，这意味着将2维卷积核分离为两个1维卷积核。</p><p>​ShuffleNet[15]使用组卷积和信道混洗来降低计算复杂度。通过深度方向可分离卷积层提取特征，在不显著降低精度的情况下，具有较低的计算量和较高的数据传播速度。</p><h2 id="iii.-实验">III. 实验</h2><h3 id="a.-数据集"><em>A. 数据集</em></h3><p>​在本文中，我们使用了从Kaggle下载的三个不同的数据集。这些数据集将模拟MobileNetv3可应用于移动设备的日常场景。</p><p>​如图3所示，在第一行中，第一个数据集是Fruit360数据集，包括131个水果类别和67692个训练图像。每个水果都是从不同的角度拍摄多次，并有一个清晰的背景。图3</p><p>中的第二行展示了第二个数据集，即10只猴子的1097个图像。第三个数据集包含16类鸟类和总共150张图像，如第三行所示。这个数据集很小而且不平衡，鸟类随机分布在不同的背景中。</p><p><imgsrc="https://gitee.com/123r/pic-bed/raw/master/img/image-20220304111031565.png"alt="image-20220304111031565" /></p><h5id="图3-样本来自三个实验数据集第一行是fruit360数据集第二行是猴子数据集第三行是鸟类数据集">图3样本来自三个实验数据集。第一行是Fruit360数据集；第二行是猴子数据集；第三行是鸟类数据集。</h5><p>​在数据预处理方面，我们对三个数据集进行了相同的操作：首先，将训练数据集随机拆分为训练子集和验证子集，拆分比例为0.7；其次，将除InceptionV3外的所有图像的大小调整为224×224，并归一化为模型的输入。对于InceptionV3，输入图像的大小调整为299×299。</p><h3 id="b.-实验步骤"><em>B.</em> <em>实验步骤</em></h3><p>​ 在本文中，我们比较了5个模型（MobileNetV3-Large，MobileNetV3-Small， AlexNet，InceptionV3 和ShuffleNetV2）在3个不同数据集上的性能。</p><p>​ 这5个模型之间的FLOPs和参数数量的比较如表III所示。</p><table><colgroup><col style="width: 16%" /><col style="width: 22%" /><col style="width: 22%" /><col style="width: 9%" /><col style="width: 14%" /><col style="width: 15%" /></colgroup><thead><tr class="header"><th>模型</th><th>MobileNetV3-Large</th><th>MobileNetV3-Small</th><th>AlexNet</th><th>InceptionV3</th><th>ShuffleNetV2</th></tr></thead><tbody><tr class="odd"><td>FLOPs（百万）</td><td>226.0</td><td>29.65</td><td>714.7</td><td>5731</td><td>148.8</td></tr><tr class="even"><td>参数（百万）</td><td>5.48</td><td>2.54</td><td>61.1</td><td>23.8</td><td>2.28</td></tr></tbody></table><p>​ 数据集包括与水果、鸟类和猴子相关的日常生活图像分类问题。</p><p>​我们根据不同数据集的唯一分类类别的数量替换每个模型的最后一个分类层。使用了ImageNet[19]上预先训练的权重[17，18]。然后通过设置所有可训练的层来微调模型。</p><p>使用预先训练的权重进行训练使训练过程更简单，并导致更快的收敛。对模型进行微调是为了使模型适应特定的任务。在三个数据集上的实验步骤相同。</p><h3 id="c.-评估指标"><em>C. 评估指标</em></h3><h5 id="准确性"><em>1)</em> <em>准确性：</em></h5><p>​为了评估模型在数据集上的性能，计算预测为正的样本（实际上是正的）的数量和预测为负的样本（实际上是负的）的数量。它反映了模型从整个数据集中区分真阳性样本和真阴性样本的精度。</p><p>​ 精度定义为： <span class="math display">\[Accuracy=\frac{TP+TN}{TP+TN+FP+FN}\]</span> ​其中TP、TN、FP、FN分别是真阳性、真阴性、假阳性和假阴性样本的数量。</p><h5 id="交叉熵损失"><em>2)</em> <em>交叉熵损失：</em></h5><p>​在训练神经网络的阶段，我们通常定义一个目标函数，并将训练过程转化为一个优化问题。为了客观地衡量神经网络预测结果的波动程度，并在搜索空间中为我们提供一个合理的优化方向，本文在模型的训练阶段采用了交叉熵作为损失函数。</p><p>​ 交叉熵损失定义为： <span class="math display">\[CrossEntropyLoss=\frac{1}{N}\sum_{i=1}^{N}\sum_{j=1}^{M}{p(x_{ij})log(q(x_{ij}))}\]</span> 其中N是训练集中的样本数量；M是训练集中的类的数目；<spanclass="math inline">\(p(x_{ij})\)</span>是第i个样本属于第j类的真实概率；<spanclass="math inline">\(q(x_{ij})\)</span>是模型产生的第i个样本属于第j类的概率。</p><h5 id="roc曲线"><em>3)</em> <em>ROC曲线：</em></h5><p>​为了直观地显示真阳性率（TPR）和假阳性率（FPR）之间的权衡，绘制了受试者工作特征（ROC）曲线，其中<spanclass="math inline">\(TPR=TP/P\)</span>是模型正确标记的阳性样本的比例，以及<spanclass="math inline">\(FPR=FP/N\)</span>是被错误标记为阳性的阴性样本的比例。</p><p>​ROC曲线下的面积通常用于衡量模型的性能。图上的对角线表示随机标记样本的模型。比随机模型更好的模型应该出现在对角线上方。模型离随机越远（即，当ROC曲线下的面积远大于0.5时），模型越好。</p><h3 id="d.-实验结果"><em>D.</em> <em>实验结果</em></h3><h4 id="在水果数据集上的实验"><em>1)</em><em>在水果数据集上的实验：</em></h4><p>​水果数据集包含来自131个水果类别的90483张图片。一类水果的所有训练和测试照片都是从该类别的单个水果代表的不同角度拍摄的，背景为白色。这意味着一个特定类别的训练和测试数据之间没有明显的差异。训练规模足够大，图像中的水果几乎没有任何背景干扰。也有大量的测试数据。因此，可以认为测试结果是令人信服的。</p><p>​如表IV所示，与其他两个数据集上的实验相比，水果数据集的微调训练时间特别长。这可能是由于大数据集和复杂的水果品种。</p><h5id="表iv-不同实验模型在水果数据集上的近似微调训练时间绝对时间高度依赖于训练环境而模型之间的时间比较相对有意义">表IV不同实验模型在水果数据集上的近似微调训练时间。绝对时间高度依赖于训练环境，而模型之间的时间比较相对有意义。</h5><table><thead><tr class="header"><th>模型</th><th>大致训练时间（分钟）</th></tr></thead><tbody><tr class="odd"><td>MobileNetV3-Large</td><td>40</td></tr><tr class="even"><td>MobileNetV3-Small</td><td>33</td></tr><tr class="odd"><td>AlexNet</td><td>417</td></tr><tr class="even"><td>InceptionV3</td><td>225</td></tr><tr class="odd"><td>ShuffleNetV2</td><td>42</td></tr></tbody></table><h5id="image-20220304114026947图4-通过在水果数据集上的实验比较了整个微调训练过程中训练和验证的准确性和损失"><imgsrc="https://gitee.com/123r/pic-bed/raw/master/img/image-20220304114026947.png"alt="image-20220304114026947" />图4通过在水果数据集上的实验，比较了整个微调训练过程中训练和验证的准确性和损失。</h5><p>​虽然训练时间相对较长，但水果数据集实际所需的训练epoch数量较少，以实现水果数据集的良好性能。在图4中，所有的MobileNetV3-Large 、 MobileNetV3-Small、AlexNet和InceptionV3都可以从第一个epoch开始达到接近1的精度。在整个训练过程中，只有ShuffleNetV2模型表现出较低的验证精度。通过比较训练和验证评估，对于所有模型，验证精度甚至普遍高于训练精度。因此，在这些实验中不存在过拟合问题。</p><p>​在Fruit数据集上对所有实验模型的测试精度和ROC曲线进行比较，得出了相同的结论：一方面，MobileNetV3-Large的性能最好,其次是MobileNetV3-Small。InceptionV3具有类似但稍低的精度。尽管AlexNet在该数据集中排名第四，但其准确性仍然很高。另一方面，ShuffleNetV2的性能并不令人满意，测试精度为0.79，与其他模型相比，分类能力差距明显。图5还清楚地表明，所有模型的性能都比随机猜测的要好得多。<imgsrc="https://gitee.com/123r/pic-bed/raw/master/img/image-20220304114343095.png"alt="image-20220304114343095" /></p><h5 id="图5-不同模型在水果数据集上的roc曲线比较">图5不同模型在水果数据集上的ROC曲线比较。</h5><p>​考虑到微调的训练时间、测试时间和数据集上所有模型的最终性能，ShuffleNetV2对应于高效率而低精度。AlexNet和InceptionV3可以以更高的时间和资源成本实现高精度。只有两个MobileNetV3型号在准确性和效率之间实现了预期的出色平衡。MobileNetV3不仅耗时最短，而且分类性能最好。</p><h4 id="在猴子数据集上的实验"><em>2)</em><em>在猴子数据集上的实验：</em></h4><p>​猴子数据集由10种猴子的近1400张图片组成。由于移动设备拍摄的照片分辨率相对较低，而动物是移动设备经常捕捉的对象，因此我们选取该数据集来验证MobileNetV3在低分辨率动物图形分类中的性能。数据集中的每个图像都包含来自这十个物种之一的猴子。图像的背景是猴子生活的地方。猴子通常在照片的中央，背景很模糊。</p><p>​在数据集的每一类中，图像的数量几乎相同。它可以帮助防止由于训练数据集的不平衡而导致的过拟合问题。此外，每个类中有近30张图片来验证训练的模型，客观地展示了每个模型的性能。每个类别的标签和图像数量如表V所示。</p><h5 id="表v-每类猴子数据集中的图像数量">表V每类猴子数据集中的图像数量。</h5><table><thead><tr class="header"><th>标签</th><th>训练图像</th><th>测试图像</th></tr></thead><tbody><tr class="odd"><td>Mantled howler</td><td>105</td><td>26</td></tr><tr class="even"><td>Patas monkey</td><td>111</td><td>28</td></tr><tr class="odd"><td>Bald uakari</td><td>110</td><td>27</td></tr><tr class="even"><td>Japanese macaque</td><td>122</td><td>30</td></tr><tr class="odd"><td>Pygmy marmoset</td><td>105</td><td>26</td></tr><tr class="even"><td>White headed capuchin</td><td>113</td><td>28</td></tr><tr class="odd"><td>Silvery marmoset</td><td>106</td><td>26</td></tr><tr class="even"><td>Common squirrel monkey</td><td>114</td><td>28</td></tr><tr class="odd"><td>Black-headed night monkey</td><td>106</td><td>27</td></tr><tr class="even"><td>Nilgiri langur</td><td>106</td><td>26</td></tr></tbody></table><p>​在实验中，训练图像被分为两部分：由770幅猴子图像组成的训练集和由328幅猴子图像组成的验证集。在训练阶段之前，所有的图片都被重新缩放到224×224像素，以适应大多数卷积神经网络的输入大小（除了InceptionV3的299×299像素）。在训练过程中，我们从ImageNet迁移学习中加载权重，并将其用作初始权重。</p><p><imgsrc="https://gitee.com/123r/pic-bed/raw/master/img/image-20220304115111033.png"alt="image-20220304115111033" /></p><h6id="图6-在猴子数据集实验的微调训练过程中训练和验证的准确性和损失的比较">图6在猴子数据集实验的微调训练过程中，训练和验证的准确性和损失的比较。</h6><p>​如图6所示，MobileNetV3-Large和MobileNetV3-Small都在4个时期内达到了收敛，甚至达到了与InceptionV3相同的高训练精度，InceptionV3是一个比MobileNTV3大得多的神经网络。与同样为移动设备设计的ShuffleNetV2相比，MobileNetV3在更少的时间内以更高的精度收敛，这表明MobileNetV3更容易在该猴子数据集和其他类似动物的低分辨率数据集中进行训练。</p><p>​在测试阶段，将所有五个训练好的模型应用于测试集。每个模型的性能结果如图6所示。</p><p>​在所有五种模型中，MobileNetV3-Large的测试精度最高，其次是MobileNetV3-Small。图7说明了相同的结果。实验结果表明，MobileNetV3能够很好地提取低分辨率图</p><p>像的特征，并应用于图像分类。根据大量的触发器和参数（如表3所示），InceptionV3应该具有最好的泛化能力。然而，它的表现并不如预期。我们假设原因在于猴子数据集的训练规模太小，以至于如此大的模型无法达到其最佳性能，这也表明MobileNetV3可以使用小数据集进行训练并达到较高的精度。</p><p><imgsrc="https://gitee.com/123r/pic-bed/raw/master/img/image-20220304115244692.png"alt="image-20220304115244692" /></p><h5 id="图7-猴子数据集上不同模型的roc曲线比较">图7猴子数据集上不同模型的ROC曲线比较。</h5><p>​为了测试每个模型的效率，我们记录了所有五个模型预测测试集中所有标签的时间。结果和分析与其他两个数据集一起显示在第三章D.4图10中。</p><h4 id="在bird数据集上的实验"><em>3)</em><em>在Bird数据集上的实验：</em></h4><p>​由于Bird数据集只包含150幅图像，并且每个类别的图像不到10幅，因此很难对其进行训练，并且很容易变得过拟合。在整个大图像中，不同的背景和小鸟的大小使得在这个数据集上的实验更难达到好的结果。与其他两个数据集相比，Bird数据集由于规模最小，所需的训练时间最少。</p><h6id="表vi-不同实验模型的bird数据集的微调训练时间绝对时间几乎相同在训练期间记录最佳验证准确度">表VI不同实验模型的Bird数据集的微调训练时间。绝对时间几乎相同。在训练期间记录最佳验证准确度。</h6><table><thead><tr class="header"><th>模型</th><th>训练时间</th><th>最佳验证准确度</th></tr></thead><tbody><tr class="odd"><td>MobileNetV3-Large</td><td>14min 1s</td><td><strong>0.80</strong></td></tr><tr class="even"><td>MobileNetV3-Small</td><td>14min 18s</td><td>0.78</td></tr><tr class="odd"><td>AlexNet</td><td>14min 13s</td><td>0.60</td></tr><tr class="even"><td>InceptionV3</td><td>14min 26s</td><td>0.67</td></tr><tr class="odd"><td>ShuffleNetV2</td><td>14min 6s</td><td>0.60</td></tr></tbody></table><p>​如表VI所示，所有模型的训练时间几乎相同。这表明时间可能不是一个好的比较指标，因为鸟类数据集的模型之间的时间差距不像水果数据集的模型之间的时间差距那么显著。然而，在与其他两个数据集相同的训练时间内，MobileNetV3-Large和MobileNetV3-Small仍然获得了比其他模型高得多的验证精度。实验过程中更多的精度和损耗细节如图8所示。</p><p>​图8表明，所有模型在Bird数据集上都表现出不同程度的过拟合。这主要是由于每个类别的训练数据不平衡，以及Bird数据集中的数据数量较少。根据图8（B）中的训练损失趋势，除ShuffleNetV2外，所有模型在训练过程中都达到了良好的收敛。验证损失的图8（d）显示AlexNet在此分类任务中失败。此外，AlexNet、InceptionV3和ShuffleNetV2在10个训练时期后遇到了严重的过拟合。MobileNetv3-Large和MobileNetv3-Small收敛速度更快且较少过拟合。这两个模型的验证精度普遍高于其他模型。</p><p><imgsrc="https://gitee.com/123r/pic-bed/raw/master/img/image-20220304115908752.png"alt="image-20220304115908752" /></p><h5id="图8-在bird数据集实验上比较了整个微调训练过程中训练和验证的准确性和损失">图8在Bird数据集实验上，比较了整个微调训练过程中训练和验证的准确性和损失。</h5><p>​图9还表明，MobileNetv3-Large在所有模型中实现了最佳性能。通过ROC曲线下面积测量，MobileNetV3-Small具有几乎相同的优异性能。</p><p><imgsrc="https://gitee.com/123r/pic-bed/raw/master/img/image-20220304115954345.png"alt="image-20220304115954345" /></p><h4 id="整体测试性能对比"><em>4)</em> <em>整体测试性能对比：</em></h4><p>​从上述对单个数据集的实验分析中可以发现，在训练过程中，MobileNetV3-Large总是能够在所有实验模型中获得最好的性能。MobileNetv3-Small通常是第二个。此外，MobileNetV3的训练时间明显短于其他模型。</p><p>​ 我们希望在测试性能上再次验证上述培训过程结果（第III章D.1至第III章D.3。为此，在所有五个模型的三个数据集的测试数据上进行了实验。图10（a）和（b）分别展示了关于效率和准确性的测试总结。</p><p>​如图10（b）所示，MobileNetv3的两个模型对所选数据集都保持了最高的分类精度。MobileNetv3-Large的表现略好于MobileNetv3-Small。</p><p>​除了分类精度，我们还关注模型效率。图10（a）表明，与其他实验模型相比，MobileNetV3的测试时间并没有明显延长。</p><p><imgsrc="https://gitee.com/123r/pic-bed/raw/master/img/image-20220304120220511.png"alt="image-20220304120220511" /></p><h6id="图10a三个不同数据集上所有实验模型的测试时间比较由于三个数据集的原始测试规模差异较大我们将所有测试时间除以相应数据集的测试次数b在三个不同数据集上比较所有实验模型的测试精度">图10（a）三个不同数据集上所有实验模型的测试时间比较。由于三个数据集的原始测试规模差异较大，我们将所有测试时间除以相应数据集的测试次数。（b）在三个不同数据集上比较所有实验模型的测试精度。</h6><p>​ 从所有模型的训练和测试过程中的精度和效率分析可以看出，两个MobileNetV3模型比大型CNN模型（如InceptionV3和AlexNet）所需的时间要短得多（尤其是微调训练时间），同时达到了令人满意的精度.MobileNetV3的效率也比其他为移动终端设计的网络（如ShuffleNetV2）略高，但性能要好得多。</p><p>​总的来说，我们的实验结果验证了MobileNetV3可以用少量的时间资源达到高精度，这意味着它非常适合于计算资源有限、需要高效率的移动设备。</p><h4 id="关于合适数据集的特征的猜想"><em>5)</em><em>关于合适数据集的特征的猜想：</em></h4><p>​作为实验结果分析的进一步，我们通过比较MobileNetv3对三个不同的数据集进行分类的性能，得出了关于哪种数据集更适合于MobileNetV3的一些猜想.</p><p>从图10（b）和单个数据集的ROC曲线（即图5、7和9）可以发现，Fruit-360数据集在极短的时间内导致1.0的准确度，而Monkey数据集在几个微调训练时期后对应于相当好的准确度（高于0.95）。然而，与其他两个数据集相比，Bird数据集的精度要低得多（低于0.50）。</p><p>​考虑到这些数据集的特点，水果数据集是日常生活对象图像的代表，在大量不同类别之间没有显著差异。每个类别的训练集足够大，并且没有背景干扰。猴子数据集由仅来自十个类别的猴子的低分辨率动物图像组成。需要分类的猴子被放在图像的中心。图像背景是猴子通常生活的环境，但它们是模糊的。鸟类数据集只有十类鸟类的少量图像。虽然这些图像的分辨率很高，但图像背景杂乱，需要分类的鸟类在整个图像中的尺寸很小。</p><p>​ 因此，我们假设适用于MobileNetV3分类任务的图像数据集的特征如下：</p><ul><li><p>分类对象在没有强背景干扰的图像中被突出显示。</p></li><li><p>图像没有高分辨率要求（即，对低分辨率图像友好）。</p></li><li><p>对于已分类的类别，训练数据集在相对较大的规模上更好，这意味着已分类的对象在训练库中更常见。</p></li><li><p>被分类的对象处于其类别的典型形状或状态，并且背景最好也是常见的。</p></li><li><p>没有必要在数据集中的不同类别之间有明显的差异，因为CNN可以比人类的眼睛更精确地捕捉特征。</p><p>对MobileNetV3合适数据集的特性的实验总结表明，MobileNetV3是专为移动设备设计的，能够在极短的时间内处理日常生活照片的分类任务。</p></li></ul><h2 id="iv.-结论">IV. 结论</h2><p>​本文基于通常由移动设备捕获和处理的图像数据集，比较了MobileNetV3和某些标准CNN模型的图像分类任务的性能。通过对实验结果的比较和分析，我们发现MobileNetV3模型能够以更高的效率完成图像分类任务。同时，它们的最终精度明显高于其他模型的精度。此外，我们注意到，MobileNetV3适用于包含具有较少背景干扰的日常生活对象的图像，即使图像是低分辨率的。因此，MobileNetV3可以非常方便地处理移动终端的图像分类任务。</p><p>​作为我们研究的进一步工作，我们想要总结其他大型CNN的优势，这些优势可以用来进一步更好地调整MobileNetV3模型，以提高其性能，同时避免架构扩展。我们还计划使用MobileNetV3模型在更多的图像数据集上进行实验，旨在总结和确认在MobileNetV3上表现出色的图像的更普遍特征。</p>]]></content>
+    
+    
+    <summary type="html">&lt;!-- toc --&gt;
+&lt;p&gt;&lt;img
+src=&quot;https://gitee.com/123r/pic-bed/raw/master/img/image-20220304130605359.png&quot;
+alt=&quot;image-20220304130605359&quot; /&gt;&lt;/p&gt;
+&lt;h1
+id=&quot;用于图像分类的mobilenetv3算法&quot;&gt;用于图像分类的MobileNetV3算法&lt;/h1&gt;
+&lt;h2 id=&quot;摘要&quot;&gt;摘要&lt;/h2&gt;
+&lt;p&gt;​
+卷积神经网络（CNN）是一种深度神经网络，通过多个卷积层提取图像特征，广泛应用于图像分类。随着移动设备处理的图像数据量的不断增加，神经网络在移动终端上的应用越来越广泛。然而，这些网络需要大量的计算和先进的硬件支持，很难适应移动设备。本文论证了MobileNetV3对于移动终端上的实际图像分类任务，可以在效率和准确性之间取得较好的平衡。在我们的实验中，比较了MobileNetV3和其他几种常用的预训练CNN模型在不同图像数据集上的分类性能。选择的数据集都很好地代表了移动设备的应用场景。结果表明，作为一种轻量级的神经网络，与其他大型网络相比，MobileNetV3以有效的方式实现了良好的精度性能。此外，ROC证实了MobileNetV3相对于其他实验模型的优势。并对适用于MobileNetV3的图像数据集的特征提出了一些猜想。&lt;/p&gt;
+&lt;h4
+id=&quot;关键词-卷积神经网络图像分类移动设备mobilenetv3&quot;&gt;关键词-卷积神经网络；图像分类；移动设备；MobileNetV3&lt;/h4&gt;</summary>
+    
+    
+    
+    <category term="知识学习" scheme="https://shunder.github.io/categories/%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="论文阅读" scheme="https://shunder.github.io/categories/%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="学习" scheme="https://shunder.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="深度学习" scheme="https://shunder.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="神经网络" scheme="https://shunder.github.io/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="图像分类" scheme="https://shunder.github.io/tags/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>方舟：生存进化 恐龙培育方法</title>
+    <link href="https://shunder.github.io/posts/53258/"/>
+    <id>https://shunder.github.io/posts/53258/</id>
+    <published>2020-05-13T12:30:28.000Z</published>
+    <updated>2022-03-12T19:48:26.436Z</updated>
+    
+    <content type="html"><![CDATA[<p>以下内容，不保证完全正确，但方法实测可行。 <!-- toc --><span id="more"></span></p><h2 id="关于恐龙交配">关于恐龙交配</h2><p>你需要： 1. 一公一母的同种恐龙 2. 分别对公龙和母龙长按E，允许交配 3.保持生命等待一段时间 4. 捡蛋（卵生动物）/等待妊娠时间结束（胎生动物） 5.空调房孵蛋，领养后代</p><p><strong>注意</strong>不同动物可能对交配，孵蛋等有条件约束，请仔细查阅dododex。</p><h2 id="关于后代属性">关于后代属性</h2><p>后代继承的属性只与父母破壳属性有关，与父母是否留痕和加点无关。也就是说留痕和加点不能使生出的后代更强，所以培育恐龙没必要留痕或者升级。后代的每项属性，有55%概率继承父母中更强的。例如：有1W血300攻的霸王龙，和1W2血 400攻的霸王龙，要配出后代1W2血400攻，概率为0.55^2=0.3025</p><h2 id="关于变异">关于变异</h2><p>每一个后代都有5%几率变异，变异加2级，增加2点属性，随机加在生命、氧气、食物、攻击等属性上。每种恐龙都有几个色块，变异时通常伴随着颜色变异，一次变异一个色块。也有只变异颜色不变异属性的，要注意。变异过的恐龙，打开物品栏，下面有个“显示祖先”选项，点击后可以查看父系母系变异次数，变异过的恐龙，变异次数将会遗传给下一代，后代变异次数为父母变异次数之和。例如某龙的母系变异是5/20，和野生龙交配后变异会为6/20,但是母系变异的5/20和5/20交配，变异后就会变为11/20，那么这条龙的变异次数上限就减少了5次。那么这就可以解释那些几万变异点的龙了，只要你拿后代龙不停地交配，变异点数会一直叠加的。但是超过20就不会变异了。只要父母其中一方变异点数没有超过20，下一代就有几率变异。例如，变异了500次的霸王龙公种和0变异代孕母龙交配，生下来的后代依然有可能变异。若父母双方变异点数都超过20，则后代不能发生变异，这就是为什么要用纯净的母龙。</p><h2 id="关于抓龙">关于抓龙</h2><p>官服野外的龙等级是150级，驯服后一般最多只有224级。要抓到属性较高的龙，最好是140以上。如果要抓攻击属性较高的龙，则驯服前可以先测试伤害。例如南巨可以用飞龙测试伤害，咬一口直接伤害1000+算是比较好。龙的移动速度抓起来的时候是固定的，但是点数还是会分配在移动速度上，这就造成了龙的属性在相对应的等级上有少许的浪费。所以，好的种龙移动速度的加点一般是不多的，这样才能有更多的技能点分配在其他属性上。</p><h2 id="以泰克霸王龙的培养为例">以泰克霸王龙的培养为例</h2><p>首先，也是最重要的，明确你要培育的是什么属性。泰霸一般分两个系培育，一个攻种，一个血种，两个系分开变异，孵战斗龙时再把攻击和血量整合。</p><p>大量抓高等级泰克霸王龙，获得单项属性较高的，比如1W2血的泰霸A，400攻的泰霸B。若A,B为一公一母，让A,B进行交配，直至配出1W2血，400攻的公泰霸，这就是初始属性比较好的种龙了。若A,B同为公，用代孕龙生出继承A的血量或者B的攻击的母龙，公母交配，，直至配出1W2血，400攻的公泰霸。</p><p>然后，大量抓5级泰克霸王龙，获得单项属性为0的恐龙，互相交配直至获得所有属性都为0的1级泰霸。大量克隆这只1级泰霸，这就是以后搞变异的代孕母龙。至于为何需要1级泰霸，这是因为官服等级上限450级，超过了恐龙会消失。要培养破壳千攻以上的泰霸，需要压等级，而且生出来的恐龙看等级就知道有没有继承或者变异，一目了然。有的私服没有这个问题可以随便用没变异过（纯净）的母龙来代孕。若是私服ban了克隆机，那就只能多繁殖纯净母龙了。</p><p>完成以上准备工作，你就获得了初始属性比较好的初代公龙，和几百只代孕纯净母龙。以后每天的日常：将公种与几百只母龙交配，检查后代变异的属性。以攻击的变异为例，攻击种的后代如果继承了公种的攻击，并且变异攻击，那恭喜你，获得了新一代的攻击种，变异后代淘汰上一代的攻击种公龙。如果变异了其他属性，则为无效变异，只能当经验宝宝。新一代攻击种若是公龙，则可以直接继续变异。若是母龙，则要用纯净公龙配出继承了攻击属性的新一代攻击种公龙。由于变异非常看脸，需要赌继承，变异，有效变异，实测有效变异概率低于1%，所以需要大量的纯净母龙。先搞300只1级母龙吧骚年。</p><h1 id="恐龙属性怎么看">恐龙属性怎么看</h1><p>抓到野生龙后，不要加点，将你要的属性加在恐龙名字后面。比如我的泰霸命名为“纯净116 378”，表示这是一只纯净母龙，血量11600，攻击378%。同样的，当你获得了新一代的种龙，要将破壳属性记录在名字中。比如我的六代攻击泰霸命名为“五代攻击116 437”。</p><p>如果你已经加过点或者留过痕，或者忘记了破壳属性。那你就需要其他辅助手段才能看到恐龙的原始属性。有的服务器有超级望远镜（A镜）mod，可以直接看到每项属性的点数。其他服务器，比如官服，就需要用到一个软件“ArkSmartBreeding”。下载方式可以百度。使用方法可以看b站的教学。一般就是对恐龙长按E，在选项里面有个导出恐龙，导出后在ArkSmartBreeding里面选择最新导出即可看到恐龙属性。点击加入库中，可以很方便地筛选恐龙的属性。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;以下内容，不保证完全正确，但方法实测可行。 &lt;!-- toc --&gt;</summary>
+    
+    
+    
+    <category term="随笔" scheme="https://shunder.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    <category term="游戏" scheme="https://shunder.github.io/categories/%E9%9A%8F%E7%AC%94/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="随笔" scheme="https://shunder.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>win10+deepin双系统安装</title>
+    <link href="https://shunder.github.io/posts/4907/"/>
+    <id>https://shunder.github.io/posts/4907/</id>
+    <published>2020-02-18T07:16:01.000Z</published>
+    <updated>2022-03-12T19:48:26.430Z</updated>
+    
+    <content type="html"><![CDATA[<!-- toc --><h2 id="写在前面">写在前面</h2><p>一方面是想学习使用Linux，另一方面学校的课程需要用到Linux，还有就是因疫情不能出门无聊想折腾。<br /><span id="more"></span></p><p>固态硬盘上安装了win10系统，准备在机械硬盘上安装deepinOS。<br />听闻deepin简单、易用、美观，顺便支持一下国产。<br />[我的设备] Dell G7</p><h2 id="准备工作">准备工作</h2><ol type="1"><li>一个U盘（最小5G）或一张光盘以及光驱；提前转移或备份重要数据。</li><li>在<a href="https://www.deepin.org/">深度科技官方网站</a>下载<ahref="https://www.deepin.org/download/">镜像文件</a>和官网提供的<ahref="https://www.deepin.org/original/deepin-boot-maker/">深度启动盘制作工具</a>。官网和论坛有时会出现504Gateway Time-out，可以多刷新几次或者稍后再试。</li><li>下载<a href="http://www.diskgenius.cn/download.php">DiskGenius分区工具</a></li><li>查看设备的BIOS启动方式，Dell笔记本是开机按F2。</li></ol><h2 id="开始">开始</h2><h3 id="md5-校验">MD5 校验</h3><ul><li>下载深度操作系统镜像完成后，需要对其进行校验，非官方或不完整的镜像将不能用于深度操作系统的安装；</li><li>Windows系统： 下载<ahref="http://www.keir.net/download/hash.zip">MD5校验工具</a>，校验您下载的镜像的MD5值与<ahref="https://www.deepin.org/download/">下载页面</a>提供的 MD5值是否一致。( MD5 值在立即下载按钮下方)</li></ul><h3 id="分区">分区</h3><ul><li><p>用DiskGenius分区工具或Windows的分区管理工具查看机械硬盘是否为动态磁盘（Linux不支持识别Windows额动态磁盘）。如果是动态磁盘，安装时将不能识别分区，要先把数据拷贝然后重新格式化这个机械硬盘。DiskGenius免费版不能将动态磁盘转换为基本磁盘。</p></li><li><p>用DiskGenius 分区工具在机械硬盘后方分出至少 25 GB的空闲空间，我这里是 80 GB。</p></li></ul><h3 id="制作启动盘">制作启动盘</h3><ul><li>插入要制作的U盘，双击深度启动盘制作工具，选择下载好的系统镜像，再选择要制作的U盘，制作期间请不要触碰U盘，制作完成请选择重启电脑。</li></ul><h3 id="安装过程">安装过程</h3><p>开机进入BIOS界面，关闭 Secure Boot(安全启动)。将启动盘设置为第一启动项。进入安装界面后，选择语言，创建用户。到最重要的一步，选择安装位置。选高级模式，用空闲空间分配各个挂载点的大小。</p><table><thead><tr class="header"><th>挂载点</th><th style="text-align: center;">挂载点中文名</th><th style="text-align: center;">文件系统</th><th style="text-align: center;">大小</th><th style="text-align: center;">备注</th></tr></thead><tbody><tr class="odd"><td>/</td><td style="text-align: center;">根分区（必选）</td><td style="text-align: center;">EXT4(推荐)</td><td style="text-align: center;">最少10G</td><td style="text-align: center;">我是分配了30G</td></tr><tr class="even"><td>swap</td><td style="text-align: center;">交换分区</td><td style="text-align: center;">不设置</td><td style="text-align: center;">4G内存以下分配2G，4G以上可不分配</td><td style="text-align: center;">我分配了8G</td></tr><tr class="odd"><td>/boot</td><td style="text-align: center;">启动</td><td style="text-align: center;">EXT4</td><td style="text-align: center;">800MB</td><td style="text-align: center;">系统启动文件目录，建议加上</td></tr><tr class="even"><td>/home</td><td style="text-align: center;">家目录(推荐)</td><td style="text-align: center;">EXT4(推荐)</td><td style="text-align: center;">最少10G</td><td style="text-align: center;">我剩下的都是</td></tr></tbody></table><ul><li>另外提一句，如果系统安装在移动硬盘上，要记得分配500MB给efi分区，否则到了其他电脑上将找不到系统。</li></ul><p>确认设置无误后，一路点安装、确定。 接着就是喝杯咖啡时间 0.0</p><h4 id="官方视频演示">官方视频演示</h4><iframe height="520" width="888" src="//player.bilibili.com/player.html?aid=16993752&amp;cid=27779929&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe><h3 id="善后">善后</h3><ul><li>解决可能或潜在的引导问题。</li></ul><p>该问题可能导致开机卡logo，无法进入windows或deepin桌面等问题。进入deepin系统后，在深度商店下载系统修复工具，修复引导。若无法进入deepin系统，可以在U盘安装deepin live，在live中修复引导。</p><ul><li>解决显卡驱动问题。</li></ul><p>可能导致进入桌面，关机和重启时的卡顿或死机。进入deepin系统后，启动器找到显卡驱动管理器，选择使用大黄蜂方案，修复引导。修复过程将多次重启。</p><h3 id="写在后面">写在后面</h3><p>一开始用得是移动硬盘，没想到折腾了2天，还是有重新插拔无法进入系统的问题，应该是一开始的分区没分好，加上死机时强制断电关机（当时没学会Linux的安全关机），导致文件系统损坏，只能装在机械硬盘上了。下次将讲讲我在deepin上用到的软件。</p>]]></content>
+    
+    
+    <summary type="html">&lt;!-- toc --&gt;
+&lt;h2 id=&quot;写在前面&quot;&gt;写在前面&lt;/h2&gt;
+&lt;p&gt;一方面是想学习使用Linux，另一方面学校的课程需要用到Linux，还有就是因疫情不能出门无聊想折腾。&lt;br /&gt;</summary>
+    
+    
+    
+    <category term="技术学习" scheme="https://shunder.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="Linux" scheme="https://shunder.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/Linux/"/>
+    
+    
+    <category term="学习" scheme="https://shunder.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="Linux" scheme="https://shunder.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>给博主充电</title>
+    <link href="https://shunder.github.io/posts/53997/"/>
+    <id>https://shunder.github.io/posts/53997/</id>
+    <published>2019-12-21T13:59:29.000Z</published>
+    <updated>2022-03-12T19:48:26.438Z</updated>
+    
+    <content type="html"><![CDATA[<p>如果你觉得我的网站对你有帮助或启发，可以送我一本想读的书哦！送在下任意一本书，即可在下一个儿童节的时候，收到一张明信片哦！Email邮寄地址、邮编、收件人至<code>peijinhe@gmail.com</code> 领取。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;如果你觉得我的网站对你有帮助或启发，可以送我一本想读的书哦！
+送在下任意一本书，即可在下一个儿童节的时候，收到一张明信片哦！Email邮寄地址、邮编、收件人至
+&lt;code&gt;peijinhe@gmail.com&lt;/code&gt; 领取。&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="随笔" scheme="https://shunder.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    <category term="福利" scheme="https://shunder.github.io/categories/%E9%9A%8F%E7%AC%94/%E7%A6%8F%E5%88%A9/"/>
+    
+    
+    <category term="福利" scheme="https://shunder.github.io/tags/%E7%A6%8F%E5%88%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo常用命令和Hexo下的Markdown语法(GFM)</title>
+    <link href="https://shunder.github.io/posts/41651/"/>
+    <id>https://shunder.github.io/posts/41651/</id>
+    <published>2019-12-19T16:23:37.000Z</published>
+    <updated>2022-03-12T19:48:26.326Z</updated>
+    
+    <content type="html"><![CDATA[<!-- toc --><h1 id="hexo常用命令">Hexo常用命令</h1><p>以下都是我常用的命令，如需要更详细的文档，请移步到<ahref="https://hexo.io/zh-cn/docs/">Hexo官方文档</a> <span id="more"></span></p><h2 id="新建">新建</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;new post&quot;</span><br></pre></td></tr></table></figure><p>新建的文件在 "hexo/source/_post/"文件夹下</p><h2 id="生成静态页面">生成静态页面</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure><p>其实就是编译，编译后，会出现一个 public文件夹，将所有的md文件编译成html文件</p><h2 id="开启本地服务器">开启本地服务器</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure><p>一般访问<ahref="http://localhost:4000">http://localhost:4000</a>查看</p><h2 id="部署">部署</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure><h2 id="清除public">清除public</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure><p>当 source文件夹中的部分资源更改过之后，特别是对文件进行了删除或者路径的改变之后，需要执行这个命令，然后重新编译。</p><h1 id="hexo下的markdown语法">Hexo下的Markdown语法</h1><p><a href="https://markdown-zh.readthedocs.io/en/latest/">Markdown</a>是一种轻量级标记语言，创始人为约翰·格鲁伯和亚伦·斯沃茨。它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML文档”。——维基百科</p><h2 id="分段">分段</h2><p>行尾输入两个或以上的空格，然后回车。或者行尾加上<code>&lt;br&gt;</code>。</p><p>像这样</p><h2 id="换行">换行</h2><p>这是第一行<br />这是第二行</p><h2 id="标题">标题</h2><p># ~ ######井号的个数表示几级标题，即Markdown可以表示一级标题到六级标题</p><h2 id="引用">引用</h2><p>用'&gt;'表示，你可以选择只在开头加一个。也可以在每行前面都加一个，效果是一样的,效果：&gt;这是引用</p><blockquote></blockquote><blockquote><blockquote><p>引用可以嵌套</p></blockquote></blockquote><h2 id="列表">列表</h2><p>* ， + ， - ， 1. ，选其中之一，注意后面有个空格，比如</p><ul><li><p>哈</p></li><li><p>哈</p></li><li><p>哈</p></li></ul><ol type="1"><li>哈</li></ol><h2 id="链接">链接</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[文字](链接地址)</span><br></pre></td></tr></table></figure><p>比如：<a href="www.hnuhpj.com">HNUHPJ</a></p><h2 id="插入图片">插入图片</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](图片地址) //图片地址可以是本地路径，也可以是网络地址</span><br></pre></td></tr></table></figure><p>比如：<img src="/images/avatar.jpg" alt="我的头像" /></p><h2 id="插入视频">插入视频</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe </span><br><span class="line">    height=520 width=720 </span><br><span class="line">    src=&quot;//player.bilibili.com/player.html?aid=16993752&amp;cid=27779929&amp;page=1&quot; </span><br><span class="line">    scrolling=&quot;no&quot; border=&quot;0&quot; frameborder=&quot;no&quot;</span><br><span class="line">    framespacing=&quot;0&quot; allowfullscreen=&quot;true&quot;&gt;</span><br><span class="line">&lt;/iframe&gt;</span><br></pre></td></tr></table></figure><iframe height="520" width="720" src="//player.bilibili.com/player.html?aid=16993752&amp;cid=27779929&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe><h2 id="强调加粗">强调（加粗）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**文字** ， __文字__ ， _文字_ ， *文字*</span><br></pre></td></tr></table></figure><p><strong>文字</strong> ， <strong>文字</strong> ， <em>文字</em> ，<em>文字</em></p><h2 id="代码">代码</h2><p>支持多种编程语言的语法高亮的显示，行号显示。<code>```Your code```</code> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>);</span><br></pre></td></tr></table></figure></p><h2 id="水平线">水平线</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* * *</span><br><span class="line">***</span><br><span class="line">*****</span><br><span class="line">- - -</span><br><span class="line">---------------------------------------</span><br></pre></td></tr></table></figure><p>效果：</p><hr /><hr /><hr /><hr /><hr /><h2 id="表格">表格</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">| 挂载点 | 挂载点中文名 | 文件系统 | 大小 |备注|</span><br><span class="line">|-------|:----------:|:--------:|:---------:|:---------:|</span><br><span class="line">| /     | 根分区（必选）| EXT4(推荐) | 最少10G |我是分配了30G|</span><br><span class="line">|swap|交换分区|不设置|4G内存以下分配2G，4G以上可不分配|我分配了8G|</span><br><span class="line">|/boot|启动|EXT4|800MB|系统启动文件目录，建议加上|</span><br><span class="line">|/home|家目录(推荐)|EXT4(推荐) |最少10G|我剩下的都是|</span><br></pre></td></tr></table></figure><table><thead><tr class="header"><th>挂载点</th><th style="text-align: center;">挂载点中文名</th><th style="text-align: center;">文件系统</th><th style="text-align: center;">大小</th><th style="text-align: center;">备注</th></tr></thead><tbody><tr class="odd"><td>/</td><td style="text-align: center;">根分区（必选）</td><td style="text-align: center;">EXT4(推荐)</td><td style="text-align: center;">最少10G</td><td style="text-align: center;">我是分配了30G</td></tr><tr class="even"><td>swap</td><td style="text-align: center;">交换分区</td><td style="text-align: center;">不设置</td><td style="text-align: center;">4G内存以下分配2G，4G以上可不分配</td><td style="text-align: center;">我分配了8G</td></tr><tr class="odd"><td>/boot</td><td style="text-align: center;">启动</td><td style="text-align: center;">EXT4</td><td style="text-align: center;">800MB</td><td style="text-align: center;">系统启动文件目录，建议加上</td></tr><tr class="even"><td>/home</td><td style="text-align: center;">家目录(推荐)</td><td style="text-align: center;">EXT4(推荐)</td><td style="text-align: center;">最少10G</td><td style="text-align: center;">我剩下的都是</td></tr></tbody></table>]]></content>
+    
+    
+    <summary type="html">&lt;!-- toc --&gt;
+&lt;h1 id=&quot;hexo常用命令&quot;&gt;Hexo常用命令&lt;/h1&gt;
+&lt;p&gt;以下都是我常用的命令，如需要更详细的文档，请移步到&lt;a
+href=&quot;https://hexo.io/zh-cn/docs/&quot;&gt;Hexo官方文档&lt;/a&gt;</summary>
+    
+    
+    
+    <category term="Hexo" scheme="https://shunder.github.io/categories/Hexo/"/>
+    
+    <category term="基础操作" scheme="https://shunder.github.io/categories/Hexo/%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/"/>
+    
+    
+    <category term="学习" scheme="https://shunder.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="Hexo" scheme="https://shunder.github.io/tags/Hexo/"/>
+    
+    <category term="Markdown" scheme="https://shunder.github.io/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://shunder.github.io/posts/16107/"/>
+    <id>https://shunder.github.io/posts/16107/</id>
+    <published>2019-12-19T11:31:06.163Z</published>
+    <updated>2022-03-13T09:31:21.759Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your veryfirst post. Check <a href="https://hexo.io/docs/">documentation</a> formore info. If you get any problems when using Hexo, you can find theanswer in <ahref="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> oryou can ask me on <ahref="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="quick-start">Quick Start</h2><span id="more"></span><h3 id="create-a-new-post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <ahref="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="run-server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="generate-static-files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <ahref="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="deploy-to-remote-sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <ahref="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p><p><span class="math inline">\(\underset{theta}{\bowtie}\)</span> <spanclass="math inline">\(N^+ = \{x | x\in N \wedge x \ne 0\}\)</span></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very
+first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for
+more info. If you get any problems when using Hexo, you can find the
+answer in &lt;a
+href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or
+you can ask me on &lt;a
+href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;quick-start&quot;&gt;Quick Start&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="生活趣闻" scheme="https://shunder.github.io/categories/%E7%94%9F%E6%B4%BB%E8%B6%A3%E9%97%BB/"/>
+    
+    
+    <category term="福利" scheme="https://shunder.github.io/tags/%E7%A6%8F%E5%88%A9/"/>
+    
+    <category term="随笔" scheme="https://shunder.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+</feed>
