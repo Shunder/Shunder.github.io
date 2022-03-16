@@ -3,11 +3,11 @@
   <title>TL;DR</title>
   
   <subtitle>与其感慨路难行，不如马上出发。</subtitle>
-  <link href="https://shunder.github.io/atom.xml" rel="self"/>
+  <link href="https://hpj.ink/atom.xml" rel="self"/>
   
-  <link href="https://shunder.github.io/"/>
+  <link href="https://hpj.ink/"/>
   <updated>2022-03-12T19:48:26.333Z</updated>
-  <id>https://shunder.github.io/</id>
+  <id>https://hpj.ink/</id>
   
   <author>
     <name>何佩奇</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>tqdm——一个快速，可扩展的Python进度条</title>
-    <link href="https://shunder.github.io/posts/62898/"/>
-    <id>https://shunder.github.io/posts/62898/</id>
+    <link href="https://hpj.ink/posts/62898/"/>
+    <id>https://hpj.ink/posts/62898/</id>
     <published>2022-03-12T09:07:41.000Z</published>
     <updated>2022-03-12T19:48:26.333Z</updated>
     
@@ -36,21 +36,21 @@
     
     
     
-    <category term="技术学习" scheme="https://shunder.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
+    <category term="技术学习" scheme="https://hpj.ink/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="Python" scheme="https://shunder.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/Python/"/>
+    <category term="Python" scheme="https://hpj.ink/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/Python/"/>
     
     
-    <category term="学习" scheme="https://shunder.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://hpj.ink/tags/%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="Python" scheme="https://shunder.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://hpj.ink/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>大气散射模型-图像去雾基础知识（一）</title>
-    <link href="https://shunder.github.io/posts/9973/"/>
-    <id>https://shunder.github.io/posts/9973/</id>
+    <link href="https://hpj.ink/posts/9973/"/>
+    <id>https://hpj.ink/posts/9973/</id>
     <published>2022-03-09T08:40:54.000Z</published>
     <updated>2022-03-12T19:48:26.434Z</updated>
     
@@ -70,21 +70,21 @@
     
     
     
-    <category term="知识学习" scheme="https://shunder.github.io/categories/%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/"/>
+    <category term="知识学习" scheme="https://hpj.ink/categories/%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="图像处理" scheme="https://shunder.github.io/categories/%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    <category term="图像处理" scheme="https://hpj.ink/categories/%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
     
     
-    <category term="学习" scheme="https://shunder.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://hpj.ink/tags/%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="图像处理" scheme="https://shunder.github.io/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    <category term="图像处理" scheme="https://hpj.ink/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
     
   </entry>
   
   <entry>
     <title>用于图像分类的MobileNetV3算法</title>
-    <link href="https://shunder.github.io/posts/34682/"/>
-    <id>https://shunder.github.io/posts/34682/</id>
+    <link href="https://hpj.ink/posts/34682/"/>
+    <id>https://hpj.ink/posts/34682/</id>
     <published>2022-03-04T04:54:47.000Z</published>
     <updated>2022-03-12T19:48:26.440Z</updated>
     
@@ -105,25 +105,25 @@ id=&quot;关键词-卷积神经网络图像分类移动设备mobilenetv3&quot;&g
     
     
     
-    <category term="知识学习" scheme="https://shunder.github.io/categories/%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/"/>
+    <category term="知识学习" scheme="https://hpj.ink/categories/%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="论文阅读" scheme="https://shunder.github.io/categories/%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    <category term="论文阅读" scheme="https://hpj.ink/categories/%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
     
     
-    <category term="学习" scheme="https://shunder.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://hpj.ink/tags/%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="深度学习" scheme="https://shunder.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://hpj.ink/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="神经网络" scheme="https://shunder.github.io/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    <category term="神经网络" scheme="https://hpj.ink/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     
-    <category term="图像分类" scheme="https://shunder.github.io/tags/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/"/>
+    <category term="图像分类" scheme="https://hpj.ink/tags/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/"/>
     
   </entry>
   
   <entry>
     <title>方舟：生存进化 恐龙培育方法</title>
-    <link href="https://shunder.github.io/posts/53258/"/>
-    <id>https://shunder.github.io/posts/53258/</id>
+    <link href="https://hpj.ink/posts/53258/"/>
+    <id>https://hpj.ink/posts/53258/</id>
     <published>2020-05-13T12:30:28.000Z</published>
     <updated>2022-03-12T19:48:26.436Z</updated>
     
@@ -134,19 +134,19 @@ id=&quot;关键词-卷积神经网络图像分类移动设备mobilenetv3&quot;&g
     
     
     
-    <category term="随笔" scheme="https://shunder.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    <category term="随笔" scheme="https://hpj.ink/categories/%E9%9A%8F%E7%AC%94/"/>
     
-    <category term="游戏" scheme="https://shunder.github.io/categories/%E9%9A%8F%E7%AC%94/%E6%B8%B8%E6%88%8F/"/>
+    <category term="游戏" scheme="https://hpj.ink/categories/%E9%9A%8F%E7%AC%94/%E6%B8%B8%E6%88%8F/"/>
     
     
-    <category term="随笔" scheme="https://shunder.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    <category term="随笔" scheme="https://hpj.ink/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>win10+deepin双系统安装</title>
-    <link href="https://shunder.github.io/posts/4907/"/>
-    <id>https://shunder.github.io/posts/4907/</id>
+    <link href="https://hpj.ink/posts/4907/"/>
+    <id>https://hpj.ink/posts/4907/</id>
     <published>2020-02-18T07:16:01.000Z</published>
     <updated>2022-03-12T19:48:26.430Z</updated>
     
@@ -159,21 +159,21 @@ id=&quot;关键词-卷积神经网络图像分类移动设备mobilenetv3&quot;&g
     
     
     
-    <category term="技术学习" scheme="https://shunder.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
+    <category term="技术学习" scheme="https://hpj.ink/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="Linux" scheme="https://shunder.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/Linux/"/>
+    <category term="Linux" scheme="https://hpj.ink/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/Linux/"/>
     
     
-    <category term="学习" scheme="https://shunder.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://hpj.ink/tags/%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="Linux" scheme="https://shunder.github.io/tags/Linux/"/>
+    <category term="Linux" scheme="https://hpj.ink/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>给博主充电</title>
-    <link href="https://shunder.github.io/posts/53997/"/>
-    <id>https://shunder.github.io/posts/53997/</id>
+    <link href="https://hpj.ink/posts/53997/"/>
+    <id>https://hpj.ink/posts/53997/</id>
     <published>2019-12-21T13:59:29.000Z</published>
     <updated>2022-03-12T19:48:26.438Z</updated>
     
@@ -190,19 +190,19 @@ id=&quot;关键词-卷积神经网络图像分类移动设备mobilenetv3&quot;&g
     
     
     
-    <category term="随笔" scheme="https://shunder.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    <category term="随笔" scheme="https://hpj.ink/categories/%E9%9A%8F%E7%AC%94/"/>
     
-    <category term="福利" scheme="https://shunder.github.io/categories/%E9%9A%8F%E7%AC%94/%E7%A6%8F%E5%88%A9/"/>
+    <category term="福利" scheme="https://hpj.ink/categories/%E9%9A%8F%E7%AC%94/%E7%A6%8F%E5%88%A9/"/>
     
     
-    <category term="福利" scheme="https://shunder.github.io/tags/%E7%A6%8F%E5%88%A9/"/>
+    <category term="福利" scheme="https://hpj.ink/tags/%E7%A6%8F%E5%88%A9/"/>
     
   </entry>
   
   <entry>
     <title>Hexo常用命令和Hexo下的Markdown语法(GFM)</title>
-    <link href="https://shunder.github.io/posts/41651/"/>
-    <id>https://shunder.github.io/posts/41651/</id>
+    <link href="https://hpj.ink/posts/41651/"/>
+    <id>https://hpj.ink/posts/41651/</id>
     <published>2019-12-19T16:23:37.000Z</published>
     <updated>2022-03-12T19:48:26.326Z</updated>
     
@@ -216,23 +216,23 @@ href=&quot;https://hexo.io/zh-cn/docs/&quot;&gt;Hexo官方文档&lt;/a&gt;</summ
     
     
     
-    <category term="Hexo" scheme="https://shunder.github.io/categories/Hexo/"/>
+    <category term="Hexo" scheme="https://hpj.ink/categories/Hexo/"/>
     
-    <category term="基础操作" scheme="https://shunder.github.io/categories/Hexo/%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/"/>
+    <category term="基础操作" scheme="https://hpj.ink/categories/Hexo/%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/"/>
     
     
-    <category term="学习" scheme="https://shunder.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://hpj.ink/tags/%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="Hexo" scheme="https://shunder.github.io/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://hpj.ink/tags/Hexo/"/>
     
-    <category term="Markdown" scheme="https://shunder.github.io/tags/Markdown/"/>
+    <category term="Markdown" scheme="https://hpj.ink/tags/Markdown/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://shunder.github.io/posts/16107/"/>
-    <id>https://shunder.github.io/posts/16107/</id>
+    <link href="https://hpj.ink/posts/16107/"/>
+    <id>https://hpj.ink/posts/16107/</id>
     <published>2019-12-19T11:31:06.163Z</published>
     <updated>2022-03-13T09:31:21.759Z</updated>
     
@@ -250,12 +250,12 @@ href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/
     
     
     
-    <category term="生活趣闻" scheme="https://shunder.github.io/categories/%E7%94%9F%E6%B4%BB%E8%B6%A3%E9%97%BB/"/>
+    <category term="生活趣闻" scheme="https://hpj.ink/categories/%E7%94%9F%E6%B4%BB%E8%B6%A3%E9%97%BB/"/>
     
     
-    <category term="福利" scheme="https://shunder.github.io/tags/%E7%A6%8F%E5%88%A9/"/>
+    <category term="福利" scheme="https://hpj.ink/tags/%E7%A6%8F%E5%88%A9/"/>
     
-    <category term="随笔" scheme="https://shunder.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    <category term="随笔" scheme="https://hpj.ink/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
